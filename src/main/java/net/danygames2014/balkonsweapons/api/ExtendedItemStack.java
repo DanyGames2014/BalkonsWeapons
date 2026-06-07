@@ -1,0 +1,4 @@
+package net.danygames2014.balkonsweapons.api;
+
+public interface ExtendedItemStack {
+}

@@ -19,6 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
+      "net.danygames2014.balkonsweapons.BalkonsWeapons"
     ],
     "stationapi:event_bus_client": [
     ],

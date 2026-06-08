@@ -4,10 +4,15 @@
   "package": "net.danygames2014.balkonsweapons.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "hold.ItemMixin",
+    "hold.ItemStackMixin",
+    "hold.PlayerEntityMixin"
   ],
   "server": [
   ],
   "client": [
+    "hold.InteractionManagerMixin",
+    "hold.MinecraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -54,6 +54,11 @@ public class MeleeComponent extends AbstractWeaponComponent{
     }
 
     @Override
+    public boolean onBlockDestroyed(ItemStack itemStack, World world, BlockState blockState, int x, int y, int z, PlayerEntity player) {
+        return false;
+    }
+
+    @Override
     public boolean onBlockDestroyed(ItemStack itemStack, World world, BlockState blockState, int x, int y, int z, LivingEntity livingEntity) {
         if (blockState.getBlock().getHardness() != 0.0f) {
 //            WMItem.damageItem(itemstack, meleeSpecs.dmgFromBlock, entityliving);

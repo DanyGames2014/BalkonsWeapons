@@ -26,7 +26,7 @@ public interface PlayerEntityWithHold {
     }
 
     // Play sounds and create particles for use state
-    default void updateItemInUse(ItemStack stack) {
+    default void updateItemInUse(ItemStack stack, int particleCount) {
 
     }
 

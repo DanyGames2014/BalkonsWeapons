@@ -1,5 +1,6 @@
 package net.danygames2014.balkonsweapons;
 
+import net.danygames2014.balkonsweapons.api.Actions;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.item.Item;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
@@ -83,6 +84,9 @@ public class BalkonsWeapons {
     
     @EventListener
     public void registerItems(ItemRegistryEvent event) {
-        
+        // will move to a more proper location
+        Actions.NONE = NAMESPACE.id("none");
+        Actions.BOW = NAMESPACE.id("bow");
+        Actions.BLOCK = NAMESPACE.id("block");
     }
 }

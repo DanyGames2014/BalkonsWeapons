@@ -32,4 +32,9 @@ public class NoneUseAction extends UseAction{
     public void renderFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
 
     }
+
+    @Override
+    public float movementSpeedMultiplier() {
+        return 1.0f;
+    }
 }

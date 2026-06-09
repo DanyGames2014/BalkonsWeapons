@@ -17,8 +17,7 @@ public interface ItemStackWithHold {
     default void startUsing(World world, PlayerEntity player) {
 
     }
-    default boolean usingTick(World world, PlayerEntity player, int time) {
-        return Util.assertImpl();
+    default void usingTick(World world, PlayerEntity player, int time) {
     }
     default boolean stopUsing(World world, PlayerEntity player, int time) {
         return Util.assertImpl();

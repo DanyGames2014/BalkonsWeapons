@@ -42,12 +42,11 @@ public abstract class ItemStackMixin implements ItemStackWithHold {
     }
 
     @Override
-    public boolean usingTick(World world, PlayerEntity player, int time) {
+    public void usingTick(World world, PlayerEntity player, int time) {
         ItemStack self = (ItemStack) (Object) this;
         if(getItem() instanceof ItemWithHold itemWithHold){
-            return itemWithHold.usingTick(self, world, player, time);
+            itemWithHold.usingTick(self, world, player, time);
         }
-        return false;
     }
 
     @Override

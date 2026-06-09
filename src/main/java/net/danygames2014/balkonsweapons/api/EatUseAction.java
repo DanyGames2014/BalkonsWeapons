@@ -1,7 +1,9 @@
 package net.danygames2014.balkonsweapons.api;
 
+import net.danygames2014.nyalib.particle.ParticleHelper;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -35,8 +37,7 @@ public class EatUseAction extends UseAction{
             var5.rotateY(-player.yaw * (float)Math.PI / 180.0F);
             var5 = var5.add(player.x, player.y + (double)player.getEyeHeight(), player.z);
 
-
-            player.world.addParticle("reddust", var5.x, var5.y, var5.z, var4.x, var4.y + 0.05D, var4.z);
+            ParticleHelper.addItemParticle(player.world, stack.getItem(),var5.x, var5.y, var5.z, var4.x, var4.y + 0.05D, var4.z);
         }
     }
 

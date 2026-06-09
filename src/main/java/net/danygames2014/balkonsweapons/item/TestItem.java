@@ -36,9 +36,8 @@ public class TestItem extends TemplateItem implements ItemWithHold {
     }
 
     @Override
-    public boolean usingTick(ItemStack stack, World world, PlayerEntity player, int time) {
+    public void usingTick(ItemStack stack, World world, PlayerEntity player, int time) {
         System.out.println("Using " + time);
-        return true;
     }
 
     @Override

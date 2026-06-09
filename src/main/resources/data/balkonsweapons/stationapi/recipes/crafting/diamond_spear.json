@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  d",
+    " s ",
+    "s  "
+  ],
+  "key": {
+    "s": {
+      "tag": "c:sticks/wooden"
+    },
+    "d": {
+      "tag": "c:gems/diamond"
+    }
+  },
+  "result": {
+    "item": "balkonsweapons:diamond_spear"
+  }
+}

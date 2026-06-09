@@ -1,6 +1,8 @@
 package net.danygames2014.balkonsweapons;
 
 import net.danygames2014.balkonsweapons.api.*;
+import net.danygames2014.balkonsweapons.item.FireRodItem;
+import net.danygames2014.balkonsweapons.item.SpearItem;
 import net.danygames2014.balkonsweapons.item.TestItem;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.item.Item;
@@ -62,11 +64,11 @@ public class BalkonsWeapons {
     public static Item crossbowBolt;
     public static Item blowgun;
     public static Item poisonousDart;
-    public static Item musketWoodenBayonet;
-    public static Item musketStoneBayonet;
-    public static Item musketIronBayonet;
-    public static Item musketGoldenBayonet;
-    public static Item musketDiamondBayonet;
+    public static Item woodenBayonetMusket;
+    public static Item stoneBayonetMusket;
+    public static Item ironBayonetMusket;
+    public static Item goldenBayonetMusket;
+    public static Item diamondBayonetMusket;
     public static Item musket;
     public static Item musketBarrel;
     public static Item musketRound;
@@ -79,7 +81,7 @@ public class BalkonsWeapons {
     public static Item gunStock;
     public static Item flintlockPistol;
     public static Item cannon;
-    public static Item cannonBall;
+    public static Item cannonball;
     public static Item dynamite;
     public static Item trainingDummy;
 
@@ -95,6 +97,14 @@ public class BalkonsWeapons {
         UseActions.EAT = new EatUseAction(NAMESPACE.id("block"));
 
         testItem = new TestItem(NAMESPACE.id("test")).setTranslationKey(NAMESPACE, "test_item");
+
+        woodenSpear = new SpearItem(NAMESPACE.id("wooden_spear"));
+        stoneSpear = new SpearItem(NAMESPACE.id("stone_spear"));
+        ironSpear = new SpearItem(NAMESPACE.id("iron_spear"));
+        goldenSpear = new SpearItem(NAMESPACE.id("golden_spear"));
+        diamondSpear = new SpearItem(NAMESPACE.id("diamond_spear"));
+
+        fireRod = new FireRodItem(NAMESPACE.id("fire_rod"));
         testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");
     }
 }

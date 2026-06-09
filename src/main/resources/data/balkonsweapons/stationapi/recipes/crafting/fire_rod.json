@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "t  ",
+    " s ",
+    "  s"
+  ],
+  "key": {
+    "s": {
+      "tag": "c:sticks/wooden"
+    },
+    "t": {
+      "item": "minecraft:torch"
+    }
+  },
+  "result": {
+    "item": "balkonsweapons:fire_rod"
+  }
+}

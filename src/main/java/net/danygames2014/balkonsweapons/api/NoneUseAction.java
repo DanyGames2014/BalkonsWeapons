@@ -22,4 +22,14 @@ public class NoneUseAction extends UseAction{
     public void setAngles(BipedEntityModel model, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch, float scale) {
 
     }
+
+    @Override
+    public void renderFirstPersonSwingProgress(PlayerEntity player, ItemStack stack, float tickDelta) {
+
+    }
+
+    @Override
+    public void renderFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
+
+    }
 }

@@ -91,6 +91,7 @@ public class BalkonsWeapons {
         UseActions.NONE = new NoneUseAction(NAMESPACE.id("none"));
         UseActions.BOW = new BowUseAction(NAMESPACE.id("bow"));
         UseActions.BLOCK = new BlockUseAction(NAMESPACE.id("block"));
+        UseActions.EAT = new EatUseAction(NAMESPACE.id("block"));
 
         testItem = new TestItem(NAMESPACE.id("test")).setTranslationKey(NAMESPACE, "test_item");
     }

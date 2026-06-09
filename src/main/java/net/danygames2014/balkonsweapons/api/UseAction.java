@@ -22,4 +22,8 @@ public abstract class UseAction {
 
     @Environment(EnvType.CLIENT)
     public abstract void setAngles(BipedEntityModel model, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch, float scale);
+
+    @Environment(EnvType.CLIENT)
+    public abstract void renderFirstPersonSwingProgress(PlayerEntity player, ItemStack stack, float tickDelta);
+    public abstract void renderFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta);
 }

@@ -10,7 +10,9 @@
   "server": [
   ],
   "client": [
+    "hold.ArsenicOverlayRendererMixin",
     "hold.BipedEntityModelMixin",
+    "hold.HeldItemRendererMixin",
     "hold.InteractionManagerMixin",
     "hold.MinecraftMixin",
     "hold.PlayerEntityRendererMixin"

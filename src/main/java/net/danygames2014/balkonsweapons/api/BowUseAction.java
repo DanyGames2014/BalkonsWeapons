@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.modificationstation.stationapi.api.util.Identifier;
+import org.lwjgl.opengl.GL11;
 
 public class BowUseAction extends UseAction{
     public BowUseAction(Identifier identifier) {
@@ -35,5 +36,41 @@ public class BowUseAction extends UseAction{
         model.leftArm.roll -= MathHelper.cos(animationProgress * 0.09F) * 0.05F + 0.05F;
         model.rightArm.pitch += MathHelper.sin(animationProgress * 0.067F) * 0.05F;
         model.leftArm.pitch -= MathHelper.sin(animationProgress * 0.067F) * 0.05F;
+    }
+
+    @Override
+    public void renderFirstPersonSwingProgress(PlayerEntity player, ItemStack stack, float tickDelta) {
+
+    }
+
+    @Override
+    public void renderFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
+        float var20 = 0;
+        GL11.glRotatef(-18.0F, 0.0F, 0.0F, 1.0F);
+        GL11.glRotatef(-12.0F, 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef(-8.0F, 1.0F, 0.0F, 0.0F);
+        float var18 = (float)stack.getMaxUseDuration() - ((float)player.getItemInUseDuration() - tickDelta + 1.0F);
+        float var19 = var18 / 20.0F;
+        var19 = (var19 * var19 + var19 * 2.0F) / 3.0F;
+
+        if (var19 > 1.0F)
+        {
+            var19 = 1.0F;
+        }
+
+        if (var19 > 0.1F)
+        {
+            GL11.glTranslatef(0.0F, MathHelper.sin((var18 - 0.1F) * 1.3F) * 0.01F * (var19 - 0.1F), 0.0F);
+        }
+
+        GL11.glTranslatef(0.0F, 0.0F, var19 * 0.1F);
+        GL11.glRotatef(-335.0F, 0.0F, 0.0F, 1.0F);
+        GL11.glRotatef(-50.0F, 0.0F, 1.0F, 0.0F);
+        GL11.glTranslatef(0.0F, 0.5F, 0.0F);
+        var20 = 1.0F + var19 * 0.2F;
+        GL11.glScalef(1.0F, 1.0F, var20);
+        GL11.glTranslatef(0.0F, -0.5F, 0.0F);
+        GL11.glRotatef(50.0F, 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef(335.0F, 0.0F, 0.0F, 1.0F);
     }
 }

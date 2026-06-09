@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
-public class UseAction {
+public abstract class UseAction {
     private final Identifier identifier;
     public final Random random = new Random();
 
@@ -18,12 +18,8 @@ public class UseAction {
         this.identifier = identifier;
     }
 
-    public void updateInUse(ItemStack stack, PlayerEntity player, int time, boolean finished) {
-
-    }
+    public abstract void updateInUse(ItemStack stack, PlayerEntity player, int time, boolean finished);
 
     @Environment(EnvType.CLIENT)
-    public void setAngles(BipedEntityModel model, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch, float scale){
-        model.rightArm.pitch = model.rightArm.pitch * 0.5F - ((float)Math.PI / 10F) * 3;
-    }
+    public abstract void setAngles(BipedEntityModel model, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch, float scale);
 }

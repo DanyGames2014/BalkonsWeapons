@@ -1,7 +1,6 @@
 package net.danygames2014.balkonsweapons;
 
-import net.danygames2014.balkonsweapons.api.UseActions;
-import net.danygames2014.balkonsweapons.api.UseAction;
+import net.danygames2014.balkonsweapons.api.*;
 import net.danygames2014.balkonsweapons.item.TestItem;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.item.Item;
@@ -89,9 +88,9 @@ public class BalkonsWeapons {
     @EventListener
     public void registerItems(ItemRegistryEvent event) {
         // will move to a more proper location
-        UseActions.NONE = new UseAction(NAMESPACE.id("none"));
-        UseActions.BOW = new UseAction(NAMESPACE.id("bow"));
-        UseActions.BLOCK = new UseAction(NAMESPACE.id("block"));
+        UseActions.NONE = new NoneUseAction(NAMESPACE.id("none"));
+        UseActions.BOW = new BowUseAction(NAMESPACE.id("bow"));
+        UseActions.BLOCK = new BlockUseAction(NAMESPACE.id("block"));
 
         testItem = new TestItem(NAMESPACE.id("test")).setTranslationKey(NAMESPACE, "test_item");
     }

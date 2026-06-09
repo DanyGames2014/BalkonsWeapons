@@ -16,7 +16,7 @@ public class TestItem extends TemplateItem implements ItemWithHold {
 
     @Override
     public UseAction getUseAction() {
-        return UseActions.BLOCK;
+        return UseActions.BOW;
     }
 
     @Override

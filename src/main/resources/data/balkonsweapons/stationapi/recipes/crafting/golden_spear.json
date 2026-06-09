@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  g",
+    " s ",
+    "s  "
+  ],
+  "key": {
+    "s": {
+      "tag": "c:sticks/wooden"
+    },
+    "g": {
+      "tag": "c:ingots/gold"
+    }
+  },
+  "result": {
+    "item": "balkonsweapons:golden_spear"
+  }
+}

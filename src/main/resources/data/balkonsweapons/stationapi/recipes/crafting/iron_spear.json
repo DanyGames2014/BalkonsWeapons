@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  i",
+    " s ",
+    "s  "
+  ],
+  "key": {
+    "s": {
+      "tag": "c:sticks/wooden"
+    },
+    "i": {
+      "tag": "c:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "balkonsweapons:iron_spear"
+  }
+}

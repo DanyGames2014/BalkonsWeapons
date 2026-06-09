@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  p",
+    " s ",
+    "s  "
+  ],
+  "key": {
+    "s": {
+      "tag": "c:sticks/wooden"
+    },
+    "p": {
+      "tag": "c:cobblestones/normal"
+    }
+  },
+  "result": {
+    "item": "balkonsweapons:stone_spear"
+  }
+}

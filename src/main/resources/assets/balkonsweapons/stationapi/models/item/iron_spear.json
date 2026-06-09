@@ -1,0 +1,6 @@
+{
+  "parent": "balkonsweapons:item/handheld_spear",
+  "textures": {
+    "layer0": "balkonsweapons:item/iron_spear"
+  }
+}

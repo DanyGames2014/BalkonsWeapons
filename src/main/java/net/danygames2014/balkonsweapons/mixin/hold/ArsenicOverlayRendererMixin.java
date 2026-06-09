@@ -34,14 +34,14 @@ public class ArsenicOverlayRendererMixin {
     }
 
     @WrapOperation(method = "renderModel(FFLnet/minecraft/entity/player/ClientPlayerEntity;Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Lorg/lwjgl/opengl/GL11;glTranslatef(FFF)V", ordinal = 0))
-    void renderFirstPersonHoldModel(float x, float y, float z, Operation<Void> original, float tickDelta, float var2, ClientPlayerEntity player, ItemStack stack){
+    void cancelTransformationModel(float x, float y, float z, Operation<Void> original, float tickDelta, float var2, ClientPlayerEntity player, ItemStack stack){
         if (player.getItemInUseDuration() <= 0) {
             original.call(x, y, z);
         }
     }
 
     @Inject(method = "renderModel(FFLnet/minecraft/entity/player/ClientPlayerEntity;Lnet/minecraft/item/ItemStack;)V", at = @At("HEAD"))
-    void testinject(float tickDelta, float var2, ClientPlayerEntity player, ItemStack stack, CallbackInfo ci){
+    void renderFirstPersonHoldModel(float tickDelta, float var2, ClientPlayerEntity player, ItemStack stack, CallbackInfo ci){
         if(player.getItemInUseDuration() > 0) {
             UseAction action = stack.getUseAction();
             action.renderFirstPersonSwingProgress(player, stack, tickDelta);

@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "hold.ItemStackMixin",
+    "hold.LivingEntityMixin",
     "hold.PlayerEntityMixin"
   ],
   "server": [
@@ -12,7 +13,6 @@
   "client": [
     "hold.ArsenicOverlayRendererMixin",
     "hold.BipedEntityModelMixin",
-    "hold.HeldItemRendererMixin",
     "hold.InteractionManagerMixin",
     "hold.MinecraftMixin",
     "hold.PlayerEntityRendererMixin"

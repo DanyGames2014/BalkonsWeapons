@@ -47,7 +47,19 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEn
     public void stopUsingItem() {
         if(this.itemInUse != null) {
             PlayerEntity self = (PlayerEntity) (Object) this;
-            this.itemInUse.stopUsing(world, self, this.itemInUseCount);
+            boolean runUse = this.itemInUse.stopUsing(world, self, this.itemInUseCount);
+            if(runUse) {
+                int count = this.itemInUse.count;
+                ItemStack result = this.itemInUse.use(world, self);
+
+                if(result != this.itemInUse || result != null && result.count != count) {
+                    this.inventory.main[this.inventory.selectedSlot] = result;
+
+                    if(result.count == 0) {
+                        this.inventory.main[this.inventory.selectedSlot] = null;
+                    }
+                }
+            }
         }
         this.clearItemInUse();
     }
@@ -73,7 +85,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEn
     public void finishUsingItem() {
         PlayerEntity self = (PlayerEntity) (Object) this;
         if(this.itemInUse != null) {
-            this.updateItemInUse(this.itemInUse, getItemInUseTime(), true);
+            this.updateItemInUse(this.itemInUse, itemInUseCount, true);
             int count = this.itemInUse.count;
             ItemStack result = this.itemInUse.use(world, self);
 
@@ -91,9 +103,11 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEn
 
     @Override
     public void setItemInUse(ItemStack stack, int inUseCount) {
+        PlayerEntity self = (PlayerEntity) (Object) this;
         if(stack != this.itemInUse) {
             this.itemInUse = stack;
             this.itemInUseCount = inUseCount;
+            stack.startUsing(world, self);
         }
     }
 
@@ -108,7 +122,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEn
                 }
                 if(this.itemInUse != null) {
                     stack.usingTick(world, self, getItemInUseTime());
-                    this.updateItemInUse(stack, getItemInUseTime(), false);
+                    this.updateItemInUse(stack, itemInUseCount, false);
                 }
             }
         } else {

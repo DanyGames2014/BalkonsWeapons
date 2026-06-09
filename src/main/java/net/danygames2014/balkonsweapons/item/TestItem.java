@@ -16,7 +16,7 @@ public class TestItem extends TemplateItem implements ItemWithHold {
 
     @Override
     public UseAction getUseAction() {
-        return UseActions.BOW;
+        return UseActions.EAT;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class TestItem extends TemplateItem implements ItemWithHold {
 
     @Override
     public void startUsing(ItemStack stack, World world, PlayerEntity player) {
-
+        System.out.println("start using");
     }
 
     @Override
@@ -43,12 +43,13 @@ public class TestItem extends TemplateItem implements ItemWithHold {
 
     @Override
     public boolean stopUsing(ItemStack stack, World world, PlayerEntity player, int time) {
-        return false;
+        return true;
     }
 
     @Override
     public ItemStack use(ItemStack stack, World world, PlayerEntity user) {
         System.out.println("Finished holding");
+        System.out.println(user.getItemInUseTime());
         return stack;
     }
 }

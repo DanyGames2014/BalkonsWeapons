@@ -26,4 +26,7 @@ public abstract class UseAction {
     @Environment(EnvType.CLIENT)
     public abstract void renderFirstPersonSwingProgress(PlayerEntity player, ItemStack stack, float tickDelta);
     public abstract void renderFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta);
+    public float movementSpeedMultiplier() {
+        return 0.2F;
+    }
 }

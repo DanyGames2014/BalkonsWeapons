@@ -4,8 +4,10 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.modificationstation.stationapi.api.util.Identifier;
 import org.lwjgl.opengl.GL11;
 
@@ -16,7 +18,26 @@ public class EatUseAction extends UseAction{
 
     @Override
     public void updateInUse(ItemStack stack, PlayerEntity player, int time, boolean finished) {
+        int particles = 0;
+        if(time <= 25 && time % 4 == 0) {
+            particles = 5;
+        }
+        if(finished) {
+            particles = 16;
+        }
 
+        for(int i = 0; i < particles; i++) {
+            Vec3d var4 = Vec3d.create(((double)this.random.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, 0.0D);
+            var4.rotateX(-player.pitch * (float)Math.PI / 180.0F);
+            var4.rotateY(-player.yaw * (float)Math.PI / 180.0F);
+            Vec3d var5 = Vec3d.create(((double)this.random.nextFloat() - 0.5D) * 0.3D, (double)(-this.random.nextFloat()) * 0.6D - 0.3D, 0.6D);
+            var5.rotateX(-player.pitch * (float)Math.PI / 180.0F);
+            var5.rotateY(-player.yaw * (float)Math.PI / 180.0F);
+            var5 = var5.add(player.x, player.y + (double)player.getEyeHeight(), player.z);
+
+
+            player.world.addParticle("reddust", var5.x, var5.y, var5.z, var4.x, var4.y + 0.05D, var4.z);
+        }
     }
 
     @Environment(EnvType.CLIENT)

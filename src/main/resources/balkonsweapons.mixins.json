@@ -10,8 +10,10 @@
   "server": [
   ],
   "client": [
+    "hold.BipedEntityModelMixin",
     "hold.InteractionManagerMixin",
-    "hold.MinecraftMixin"
+    "hold.MinecraftMixin",
+    "hold.PlayerEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -4,3 +4,4 @@ classTweaker v1 named
 transitive-inject-interface net/minecraft/item/ItemStack net/danygames2014/balkonsweapons/mixininterface/ItemStackWithHold
 transitive-inject-interface net/minecraft/entity/player/PlayerEntity net/danygames2014/balkonsweapons/mixininterface/PlayerEntityWithHold
 transitive-inject-interface net/minecraft/client/InteractionManager net/danygames2014/balkonsweapons/mixininterface/InteractionManagerWithHold
+transitive-inject-interface net/minecraft/client/render/entity/model/BipedEntityModel net/danygames2014/balkonsweapons/mixininterface/BipedEntityModelWithHold

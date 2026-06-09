@@ -1,7 +1,9 @@
 package net.danygames2014.balkonsweapons.mixin.hold;
 
 import net.danygames2014.balkonsweapons.api.UseAction;
+import net.danygames2014.balkonsweapons.api.UseActions;
 import net.danygames2014.balkonsweapons.mixininterface.ItemStackWithHold;
+import net.danygames2014.balkonsweapons.mixininterface.ItemWithHold;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -16,35 +18,52 @@ public abstract class ItemStackMixin implements ItemStackWithHold {
 
     @Override
     public int getMaxUseDuration() {
-        return getItem().getMaxUseDuration();
+        if(getItem() instanceof ItemWithHold itemWithHold){
+            return itemWithHold.getMaxUseDuration();
+        }
+        return 0;
     }
 
     @Override
     public boolean attemptHold(World world, PlayerEntity player) {
         ItemStack self = (ItemStack) (Object) this;
-        return getItem().attemptHold(self, world, player);
+        if(getItem() instanceof ItemWithHold itemWithHold){
+            return itemWithHold.attemptHold(self, world, player);
+        }
+        return false;
     }
 
     @Override
     public void startUsing(World world, PlayerEntity player) {
         ItemStack self = (ItemStack) (Object) this;
-        getItem().startUsing(self, world, player);
+        if(getItem() instanceof ItemWithHold itemWithHold){
+            itemWithHold.startUsing(self, world, player);
+        }
     }
 
     @Override
     public boolean usingTick(World world, PlayerEntity player, int time) {
         ItemStack self = (ItemStack) (Object) this;
-        return getItem().usingTick(self, world, player, time);
+        if(getItem() instanceof ItemWithHold itemWithHold){
+            return itemWithHold.usingTick(self, world, player, time);
+        }
+        return false;
     }
 
     @Override
     public boolean stopUsing(World world, PlayerEntity player, int time) {
         ItemStack self = (ItemStack) (Object) this;
-        return getItem().stopUsing(self, world, player, time);
+        if(getItem() instanceof ItemWithHold itemWithHold){
+            return itemWithHold.stopUsing(self, world, player, time);
+        }
+        return false;
     }
 
     @Override
     public UseAction getUseAction() {
-        return getItem().getUseAction();
+        if(getItem() instanceof ItemWithHold itemWithHold){
+            return itemWithHold.getUseAction();
+        }
+        return UseActions.NONE;
     }
 }

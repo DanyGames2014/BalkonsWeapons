@@ -16,7 +16,7 @@ public class TestItem extends TemplateItem implements ItemWithHold {
 
     @Override
     public UseAction getUseAction() {
-        return UseActions.EAT;
+        return UseActions.BOW;
     }
 
     @Override
@@ -27,6 +27,12 @@ public class TestItem extends TemplateItem implements ItemWithHold {
     @Override
     public void startUsing(ItemStack stack, World world, PlayerEntity player) {
 
+    }
+
+    @Override
+    public int getTextureId(int damage) {
+        return 67;
+//        return 21;
     }
 
     @Override

@@ -84,6 +84,7 @@ public class BalkonsWeapons {
     public static Item trainingDummy;
 
     public static Item testItem;
+    public static Item testItem2;
 
     @EventListener
     public void registerItems(ItemRegistryEvent event) {
@@ -94,5 +95,6 @@ public class BalkonsWeapons {
         UseActions.EAT = new EatUseAction(NAMESPACE.id("block"));
 
         testItem = new TestItem(NAMESPACE.id("test")).setTranslationKey(NAMESPACE, "test_item");
+        testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");
     }
 }

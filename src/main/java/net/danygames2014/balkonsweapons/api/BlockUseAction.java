@@ -32,7 +32,7 @@ public class BlockUseAction extends UseAction{
     @Environment(EnvType.CLIENT)
     @Override
     public void renderFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
-        GL11.glTranslatef(-0.5F, 0.2F, 0.0F);
+        GL11.glTranslatef(-0.2F, 0.08F, -0.0F);
         GL11.glRotatef(30.0F, 0.0F, 1.0F, 0.0F);
         GL11.glRotatef(-80.0F, 1.0F, 0.0F, 0.0F);
         GL11.glRotatef(60.0F, 0.0F, 1.0F, 0.0F);

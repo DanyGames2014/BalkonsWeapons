@@ -67,7 +67,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEn
     @Override
     public void updateItemInUse(ItemStack stack, int time, boolean finished) {
         PlayerEntity self = (PlayerEntity) (Object) this;
-        stack.getUseAction().updateInUse(stack, self, time, finished);
+        stack.getUseAction(self.world, self).updateInUse(stack, self, time, finished);
     }
 
     @Override

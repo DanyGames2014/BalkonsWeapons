@@ -13,6 +13,7 @@
   "client": [
     "hold.ArsenicOverlayRendererMixin",
     "hold.BipedEntityModelMixin",
+    "hold.GameRendererMixin",
     "hold.InteractionManagerMixin",
     "hold.MinecraftMixin",
     "hold.PlayerEntityRendererMixin"

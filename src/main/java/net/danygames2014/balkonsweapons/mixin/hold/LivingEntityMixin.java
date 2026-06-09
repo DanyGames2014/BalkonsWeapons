@@ -22,9 +22,9 @@ public class LivingEntityMixin {
     void adjustUsingSpeed(CallbackInfo ci) {
 
         if((LivingEntity) (Object) this instanceof PlayerEntity player && player.isUsingItem()) {
-            UseAction action = player.getItemInUse().getUseAction();
-            sidewaysSpeed *= action.movementSpeedMultiplier();
-            forwardSpeed *= action.movementSpeedMultiplier();
+            UseAction action = player.getItemInUse().getUseAction(player.world, player);
+            sidewaysSpeed *= action.getMovementSpeedMultiplier();
+            forwardSpeed *= action.getMovementSpeedMultiplier();
         }
     }
 }

@@ -34,7 +34,7 @@ public class NoneUseAction extends UseAction{
     }
 
     @Override
-    public float movementSpeedMultiplier() {
+    public float getMovementSpeedMultiplier() {
         return 1.0f;
     }
 }

@@ -23,9 +23,9 @@ public class PlayerEntityRendererMixin {
     @Inject(method = "render(Lnet/minecraft/entity/player/PlayerEntity;DDDFF)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;isSneaking()Z", ordinal = 0))
     void setPlayerModelUseAction(PlayerEntity playerEntity, double d, double e, double f, float g, float h, CallbackInfo ci){
         if(playerEntity.isUsingItem()) {
-            bipedModel.setUseAction(playerEntity.getItemInUse().getUseAction());
-            armor1.setUseAction(playerEntity.getItemInUse().getUseAction());
-            armor2.setUseAction(playerEntity.getItemInUse().getUseAction());
+            bipedModel.setUseAction(playerEntity.getItemInUse().getUseAction(playerEntity.world, playerEntity));
+            armor1.setUseAction(playerEntity.getItemInUse().getUseAction(playerEntity.world, playerEntity));
+            armor2.setUseAction(playerEntity.getItemInUse().getUseAction(playerEntity.world, playerEntity));
         }
     }
 

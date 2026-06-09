@@ -6,7 +6,6 @@ import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.modificationstation.stationapi.api.util.Identifier;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
@@ -25,8 +24,13 @@ public abstract class UseAction {
 
     @Environment(EnvType.CLIENT)
     public abstract void renderFirstPersonSwingProgress(PlayerEntity player, ItemStack stack, float tickDelta);
+    @Environment(EnvType.CLIENT)
     public abstract void renderFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta);
-    public float movementSpeedMultiplier() {
+    public float getMovementSpeedMultiplier() {
         return 0.2F;
+    }
+
+    public float getFovMultiplier(float tickDelta, int time) {
+        return 1.0F;
     }
 }

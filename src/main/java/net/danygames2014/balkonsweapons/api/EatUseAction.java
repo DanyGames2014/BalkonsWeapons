@@ -1,6 +1,7 @@
 package net.danygames2014.balkonsweapons.api;
 
 import net.danygames2014.nyalib.particle.ParticleHelper;
+import net.danygames2014.nyalib.sound.SoundHelper;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.particle.ParticleManager;
@@ -21,10 +22,10 @@ public class EatUseAction extends UseAction{
     @Override
     public void updateInUse(ItemStack stack, PlayerEntity player, int time, boolean finished) {
         int particles = 0;
-        if(time <= 25 && time % 4 == 0) {
+        if(time <= 35 && time % 4 == 0) {
             particles = 5;
         }
-        if(finished) {
+        else if(finished) {
             particles = 16;
         }
 
@@ -38,6 +39,13 @@ public class EatUseAction extends UseAction{
             var5 = var5.add(player.x, player.y + (double)player.getEyeHeight(), player.z);
 
             ParticleHelper.addItemParticle(player.world, stack.getItem(),var5.x, var5.y, var5.z, var4.x, var4.y + 0.05D, var4.z);
+        }
+
+        if(finished) {
+            SoundHelper.playSound(player, "balkonsweapons:random.burp", 0.5F, this.random.nextFloat() * 0.1F + 0.9F);
+            SoundHelper.playSound(player, "balkonsweapons:random.eat", 0.5F + 0.5F * (float)this.random.nextInt(2), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+        } else if(time <= 35 && time % 4 == 0) {
+            SoundHelper.playSound(player, "balkonsweapons:random.eat", 0.5F + 0.5F * (float)this.random.nextInt(2), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
         }
     }
 

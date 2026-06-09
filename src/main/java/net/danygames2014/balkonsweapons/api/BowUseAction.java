@@ -10,6 +10,7 @@ import net.modificationstation.stationapi.api.util.Identifier;
 import org.lwjgl.opengl.GL11;
 
 public class BowUseAction extends UseAction{
+
     public BowUseAction(Identifier identifier) {
         super(identifier);
     }
@@ -17,6 +18,31 @@ public class BowUseAction extends UseAction{
     @Override
     public void updateInUse(ItemStack stack, PlayerEntity player, int time, boolean finished) {
 
+    }
+
+    @Override
+    public float getFovMultiplier(float tickDelta, int time) {
+        float f = time / 20.0F;
+        float fNext = (time + 1) / 20.0F;
+
+        if(f > 1.0F) {
+            f = 1.0F;
+        } else {
+            f *= f;
+        }
+
+        if(fNext > 1.0F) {
+            fNext = 1.0F;
+        } else {
+            fNext *= fNext;
+        }
+
+
+
+        float fov = 1.0F - f * 0.15F;
+        float fovNext = 1.0F - fNext * 0.15F;
+
+        return net.modificationstation.stationapi.api.util.math.MathHelper.lerp(tickDelta, fov, fovNext);
     }
 
     @Environment(EnvType.CLIENT)

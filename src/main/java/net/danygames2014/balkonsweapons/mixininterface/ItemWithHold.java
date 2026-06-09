@@ -10,7 +10,7 @@ public interface ItemWithHold {
     int getMaxUseDuration();
 
     default boolean attemptHold(ItemStack stack, World world, PlayerEntity player) {
-        if(getUseAction() != UseActions.NONE) {
+        if(getUseAction(stack, world, player) != UseActions.NONE) {
             player.setItemInUse(stack, getMaxUseDuration());
             return true;
         }
@@ -20,5 +20,5 @@ public interface ItemWithHold {
     void startUsing(ItemStack stack, World world, PlayerEntity player);
     void usingTick(ItemStack stack, World world, PlayerEntity player, int time);
     boolean stopUsing(ItemStack stack, World world, PlayerEntity player, int time);
-    UseAction getUseAction();
+    UseAction getUseAction(ItemStack stack, World world, PlayerEntity player);
 }

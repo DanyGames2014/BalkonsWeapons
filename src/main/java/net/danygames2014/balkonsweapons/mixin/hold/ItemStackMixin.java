@@ -59,9 +59,10 @@ public abstract class ItemStackMixin implements ItemStackWithHold {
     }
 
     @Override
-    public UseAction getUseAction() {
+    public UseAction getUseAction(World world, PlayerEntity player) {
+        ItemStack self = (ItemStack) (Object) this;
         if(getItem() instanceof ItemWithHold itemWithHold){
-            return itemWithHold.getUseAction();
+            return itemWithHold.getUseAction(self, world, player);
         }
         return UseActions.NONE;
     }

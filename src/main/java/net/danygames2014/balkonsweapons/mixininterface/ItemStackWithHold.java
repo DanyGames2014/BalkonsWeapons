@@ -22,7 +22,7 @@ public interface ItemStackWithHold {
     default boolean stopUsing(World world, PlayerEntity player, int time) {
         return Util.assertImpl();
     }
-    default UseAction getUseAction() {
+    default UseAction getUseAction(World world, PlayerEntity player) {
         return Util.assertImpl();
     }
 }

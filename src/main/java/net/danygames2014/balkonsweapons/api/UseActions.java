@@ -5,4 +5,5 @@ public class UseActions {
     public static UseAction BOW;
     public static UseAction BLOCK;
     public static UseAction EAT;
+    public static UseAction DRINK;
 }

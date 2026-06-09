@@ -16,7 +16,7 @@ public class TestItem extends TemplateItem implements ItemWithHold {
 
     @Override
     public UseAction getUseAction(ItemStack stack, World world, PlayerEntity player) {
-        return UseActions.DRINK;
+        return UseActions.BLOCK;
     }
 
     @Override

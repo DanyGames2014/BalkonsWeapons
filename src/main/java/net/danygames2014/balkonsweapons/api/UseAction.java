@@ -23,9 +23,10 @@ public abstract class UseAction {
     public abstract void setAngles(BipedEntityModel model, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch, float scale);
 
     @Environment(EnvType.CLIENT)
-    public abstract void renderFirstPersonSwingProgress(PlayerEntity player, ItemStack stack, float tickDelta);
+    public abstract void transformFirstPersonSwingProgress(PlayerEntity player, ItemStack stack, float tickDelta);
     @Environment(EnvType.CLIENT)
-    public abstract void renderFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta);
+    public abstract void transformFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta);
+    public abstract void transformThirdPerson(PlayerEntity player, ItemStack stack, float tickDelta);
     public float getMovementSpeedMultiplier() {
         return 0.2F;
     }

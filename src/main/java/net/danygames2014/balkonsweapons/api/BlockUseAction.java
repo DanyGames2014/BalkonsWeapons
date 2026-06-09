@@ -25,17 +25,25 @@ public class BlockUseAction extends UseAction{
     }
 
     @Override
-    public void renderFirstPersonSwingProgress(PlayerEntity player, ItemStack stack, float tickDelta) {
+    public void transformFirstPersonSwingProgress(PlayerEntity player, ItemStack stack, float tickDelta) {
 
     }
 
     @Environment(EnvType.CLIENT)
     @Override
-    public void renderFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
+    public void transformFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
         GL11.glTranslatef(-0.2F, 0.08F, -0.0F);
         GL11.glRotatef(30.0F, 0.0F, 1.0F, 0.0F);
         GL11.glRotatef(-80.0F, 1.0F, 0.0F, 0.0F);
         GL11.glRotatef(60.0F, 0.0F, 1.0F, 0.0F);
+    }
+
+    @Override
+    public void transformThirdPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
+        GL11.glTranslatef(0.05F, 0.0F, -0.1F);
+        GL11.glRotatef(-50.0F, 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef(-10.0F, 1.0F, 0.0F, 0.0F);
+        GL11.glRotatef(-60.0F, 0.0F, 0.0F, 1.0F);
     }
 
 

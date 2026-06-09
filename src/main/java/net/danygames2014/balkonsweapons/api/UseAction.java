@@ -14,7 +14,7 @@ public class UseAction {
         this.identifier = identifier;
     }
 
-    public void updateInUse(ItemStack stack, PlayerEntity player, int particleCount) {
+    public void updateInUse(ItemStack stack, PlayerEntity player, int time, boolean finished) {
 
     }
 }

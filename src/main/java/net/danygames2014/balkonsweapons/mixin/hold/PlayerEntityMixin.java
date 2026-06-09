@@ -53,9 +53,9 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEn
     }
 
     @Override
-    public void updateItemInUse(ItemStack stack, int particleCount) {
+    public void updateItemInUse(ItemStack stack, int time, boolean finished) {
         PlayerEntity self = (PlayerEntity) (Object) this;
-        stack.getUseAction().updateInUse(stack, self, particleCount);
+        stack.getUseAction().updateInUse(stack, self, time, finished);
     }
 
     @Override
@@ -73,7 +73,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEn
     public void finishUsingItem() {
         PlayerEntity self = (PlayerEntity) (Object) this;
         if(this.itemInUse != null) {
-            this.updateItemInUse(this.itemInUse, 16);
+            this.updateItemInUse(this.itemInUse, getItemInUseTime(), true);
             int count = this.itemInUse.count;
             ItemStack result = this.itemInUse.use(world, self);
 
@@ -103,14 +103,12 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEn
         if(this.itemInUse != null) {
             ItemStack stack = this.inventory.getSelectedItem();
             if(stack == this.itemInUse) {
-                if(this.itemInUseCount <= 25 && this.itemInUseCount % 4 == 0) {
-                    this.updateItemInUse(stack, 5);
-                }
                 if(--this.itemInUseCount == 0 && !world.isRemote) {
                     this.finishUsingItem();
                 }
                 if(this.itemInUse != null) {
                     stack.usingTick(world, self, getItemInUseTime());
+                    this.updateItemInUse(stack, getItemInUseTime(), false);
                 }
             }
         } else {

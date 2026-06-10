@@ -17,9 +17,10 @@ public abstract class ItemStackMixin implements ItemStackWithHold {
     public abstract Item getItem();
 
     @Override
-    public int getMaxUseDuration() {
+    public int getMaxUseDuration(World world, PlayerEntity player) {
+        ItemStack self = (ItemStack) (Object) this;
         if(getItem() instanceof ItemWithHold itemWithHold){
-            return itemWithHold.getMaxUseDuration();
+            return itemWithHold.getMaxUseDuration(self, world, player);
         }
         return 0;
     }

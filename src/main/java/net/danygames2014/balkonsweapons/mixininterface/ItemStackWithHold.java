@@ -6,7 +6,7 @@ import net.minecraft.world.World;
 import net.modificationstation.stationapi.api.util.Util;
 
 public interface ItemStackWithHold {
-    default int getMaxUseDuration() {
+    default int getMaxUseDuration(World world, PlayerEntity player) {
         return Util.assertImpl();
     }
 

@@ -72,7 +72,8 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEn
 
     @Override
     public int getItemInUseTime() {
-        return this.isUsingItem() ? this.itemInUse.getMaxUseDuration() - this.itemInUseCount : 0;
+        PlayerEntity self = (PlayerEntity) (Object) this;
+        return this.isUsingItem() ? this.itemInUse.getMaxUseDuration(self.world, self) - this.itemInUseCount : 0;
     }
 
     @Override

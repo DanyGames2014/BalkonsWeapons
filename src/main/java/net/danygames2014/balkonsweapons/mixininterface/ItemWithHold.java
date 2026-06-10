@@ -7,11 +7,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public interface ItemWithHold {
-    int getMaxUseDuration();
+    int getMaxUseDuration(ItemStack stack, World world, PlayerEntity player);
 
     default boolean attemptHold(ItemStack stack, World world, PlayerEntity player) {
         if(getUseAction(stack, world, player) != UseActions.NONE) {
-            player.setItemInUse(stack, getMaxUseDuration());
+            player.setItemInUse(stack, getMaxUseDuration(stack, world, player));
             return true;
         }
         return false;

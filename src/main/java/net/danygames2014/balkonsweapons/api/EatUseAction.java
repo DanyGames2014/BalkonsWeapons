@@ -22,7 +22,7 @@ public class EatUseAction extends UseAction{
     @Override
     public void updateInUse(ItemStack stack, PlayerEntity player, int time, boolean finished) {
         int particles = 0;
-        if(time <= stack.getMaxUseDuration() - 5 && time % 4 == 0) {
+        if(time <= stack.getMaxUseDuration(player.world, player) - 5 && time % 4 == 0) {
             particles = 5;
         }
         else if(finished) {
@@ -44,7 +44,7 @@ public class EatUseAction extends UseAction{
         if(finished) {
             SoundHelper.playSound(player, "balkonsweapons:random.burp", 0.5F, this.random.nextFloat() * 0.1F + 0.9F);
             SoundHelper.playSound(player, "balkonsweapons:random.eat", 0.5F + 0.5F * (float)this.random.nextInt(2), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-        } else if(time <= stack.getMaxUseDuration() - 5 && time % 4 == 0) {
+        } else if(time <= stack.getMaxUseDuration(player.world, player) - 5 && time % 4 == 0) {
             SoundHelper.playSound(player, "balkonsweapons:random.eat", 0.5F + 0.5F * (float)this.random.nextInt(2), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
         }
     }
@@ -53,7 +53,7 @@ public class EatUseAction extends UseAction{
     @Override
     public void transformFirstPersonSwingProgressVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
         float var14 = (float)player.getItemInUseDuration() - tickDelta + 1.0F;
-        float var15 = 1.0F - var14 / (float)stack.getMaxUseDuration();
+        float var15 = 1.0F - var14 / (float)stack.getMaxUseDuration(player.world, player);
         float var16 = 1.0F - var15;
         var16 = var16 * var16 * var16;
         var16 = var16 * var16 * var16;

@@ -74,7 +74,7 @@ public class BowUseAction extends UseAction{
         GL11.glRotatef(-8.0F, 1.0F, 0.0F, 0.0F);
 
         GL11.glTranslatef(-0.2F, 0.2F, 0.0F);
-        float var18 = (float)stack.getMaxUseDuration() - ((float)player.getItemInUseDuration() - tickDelta + 1.0F);
+        float var18 = (float)stack.getMaxUseDuration(player.world, player) - ((float)player.getItemInUseDuration() - tickDelta + 1.0F);
         float var19 = var18 / 20.0F;
         var19 = (var19 * var19 + var19 * 2.0F) / 3.0F;
 

@@ -46,7 +46,7 @@ public class ArsenicOverlayRendererMixin {
     void renderFirstPersonHoldModel(float tickDelta, float var2, ClientPlayerEntity player, ItemStack stack, CallbackInfo ci){
         if(player.getItemInUseDuration() > 0) {
             UseAction action = stack.getUseAction(player.world, player);
-            action.transformFirstPersonSwingProgressVanilla(player, stack, tickDelta);
+            action.transformFirstPersonSwingProgressModel(player, stack, tickDelta);
         }
     }
 
@@ -54,9 +54,7 @@ public class ArsenicOverlayRendererMixin {
     void renderFirstPersonHoldModel2(float tickDelta, float var2, ClientPlayerEntity player, ItemStack stack, CallbackInfo ci) {
         if(player.getItemInUseDuration() > 0) {
             UseAction action = stack.getUseAction(player.world, player);
-            glRotatef(45.0f, 0, 1, 0);
-            action.transformFirstPersonVanilla(player, stack, tickDelta);
-            glRotatef(-45.0f, 0, 1, 0);
+            action.transformFirstPersonModel(player, stack, tickDelta);
         }
     }
 

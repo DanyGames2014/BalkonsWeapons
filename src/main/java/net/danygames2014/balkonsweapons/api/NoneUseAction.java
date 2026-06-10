@@ -17,32 +17,6 @@ public class NoneUseAction extends UseAction{
 
     }
 
-    @Environment(EnvType.CLIENT)
-    @Override
-    public void setAngles(BipedEntityModel model, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch, float scale) {
-
-    }
-
-    @Override
-    public void transformFirstPersonSwingProgressVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
-
-    }
-
-    @Override
-    public void transformFirstPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
-
-    }
-
-    @Override
-    public void transformThirdPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
-
-    }
-
-    @Override
-    public void transformThirdPersonModel(PlayerEntity player, ItemStack stack, float tickDelta) {
-
-    }
-
     @Override
     public float getMovementSpeedMultiplier() {
         return 1.0f;

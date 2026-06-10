@@ -16,12 +16,12 @@ public class TestItem extends TemplateItem implements ItemWithHold {
 
     @Override
     public UseAction getUseAction(ItemStack stack, World world, PlayerEntity player) {
-        return UseActions.BLOCK;
+        return UseActions.DRINK;
     }
 
     @Override
     public int getMaxUseDuration() {
-        return 4000;
+        return 40;
     }
 
     @Override

@@ -25,11 +25,6 @@ public class BlockUseAction extends UseAction{
         model.rightArm.pitch = model.rightArm.pitch * 0.5F - ((float)Math.PI / 10F) * 3;
     }
 
-    @Override
-    public void transformFirstPersonSwingProgressVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
-
-    }
-
     @Environment(EnvType.CLIENT)
     @Override
     public void transformFirstPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
@@ -37,6 +32,17 @@ public class BlockUseAction extends UseAction{
         GL11.glRotatef(30.0F, 0.0F, 1.0F, 0.0F);
         GL11.glRotatef(-80.0F, 1.0F, 0.0F, 0.0F);
         GL11.glRotatef(60.0F, 0.0F, 1.0F, 0.0F);
+    }
+
+    @Environment(EnvType.CLIENT)
+    @Override
+    public void transformFirstPersonModel(PlayerEntity player, ItemStack stack, float tickDelta) {
+        GL11.glRotatef(45.0f, 0, 1, 0);
+        GL11.glTranslatef(-0.2F, 0.08F, -0.0F);
+        GL11.glRotatef(30.0F, 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef(-80.0F, 1.0F, 0.0F, 0.0F);
+        GL11.glRotatef(60.0F, 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef(-45.0f, 0, 1, 0);
     }
 
     @Override

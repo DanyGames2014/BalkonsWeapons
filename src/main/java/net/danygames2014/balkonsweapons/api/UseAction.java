@@ -20,18 +20,39 @@ public abstract class UseAction {
     public abstract void updateInUse(ItemStack stack, PlayerEntity player, int time, boolean finished);
 
     @Environment(EnvType.CLIENT)
-    public abstract void setAngles(BipedEntityModel model, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch, float scale);
+    public void setAngles(BipedEntityModel model, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch, float scale) {
+
+    }
 
     @Environment(EnvType.CLIENT)
-    public abstract void transformFirstPersonSwingProgressVanilla(PlayerEntity player, ItemStack stack, float tickDelta);
+    public void transformFirstPersonSwingProgressVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
+
+    }
     @Environment(EnvType.CLIENT)
-    public abstract void transformFirstPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta);
-    public abstract void transformThirdPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta);
-    public abstract void transformThirdPersonModel(PlayerEntity player, ItemStack stack, float tickDelta);
+    public void transformFirstPersonSwingProgressModel(PlayerEntity player, ItemStack stack, float tickDelta) {
+
+    }
+    @Environment(EnvType.CLIENT)
+    public void transformFirstPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
+
+    }
+    @Environment(EnvType.CLIENT)
+    public void transformFirstPersonModel(PlayerEntity player, ItemStack stack, float tickDelta) {
+
+    }
+    @Environment(EnvType.CLIENT)
+    public void transformThirdPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
+
+    }
+    @Environment(EnvType.CLIENT)
+    public void transformThirdPersonModel(PlayerEntity player, ItemStack stack, float tickDelta) {
+
+    }
     public float getMovementSpeedMultiplier() {
         return 0.2F;
     }
 
+    @Environment(EnvType.CLIENT)
     public float getFovMultiplier(float tickDelta, int time) {
         return 1.0F;
     }

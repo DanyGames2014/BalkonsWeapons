@@ -12,7 +12,7 @@ public class DrinkUseAction extends EatUseAction{
 
     @Override
     public void updateInUse(ItemStack stack, PlayerEntity player, int time, boolean finished) {
-        if(time <= 35 && time % 4 == 0 || finished) {
+        if(time <= stack.getMaxUseDuration() - 5 && time % 4 == 0 || finished) {
             SoundHelper.playSound(player, "balkonsweapons:random.drink", 0.5F, this.random.nextFloat() * 0.1F + 0.9F);
         }
     }

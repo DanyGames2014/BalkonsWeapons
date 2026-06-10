@@ -20,6 +20,7 @@ public class BowUseAction extends UseAction{
 
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public float getFovMultiplier(float tickDelta, int time) {
         float f = time / 20.0F;
@@ -64,11 +65,7 @@ public class BowUseAction extends UseAction{
         model.leftArm.pitch -= MathHelper.sin(animationProgress * 0.067F) * 0.05F;
     }
 
-    @Override
-    public void transformFirstPersonSwingProgressVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
-
-    }
-
+    @Environment(EnvType.CLIENT)
     @Override
     public void transformFirstPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
         float var20 = 0;
@@ -102,13 +99,11 @@ public class BowUseAction extends UseAction{
         GL11.glRotatef(335.0F, 0.0F, 0.0F, 1.0F);
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
-    public void transformThirdPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
-
-    }
-
-    @Override
-    public void transformThirdPersonModel(PlayerEntity player, ItemStack stack, float tickDelta) {
-
+    public void transformFirstPersonModel(PlayerEntity player, ItemStack stack, float tickDelta) {
+        GL11.glRotatef(45.0f, 0, 1, 0);
+        transformFirstPersonVanilla(player, stack, tickDelta);
+        GL11.glRotatef(-45.0f, 0, 1, 0);
     }
 }

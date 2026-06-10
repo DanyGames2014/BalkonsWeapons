@@ -1,6 +1,7 @@
 package net.danygames2014.balkonsweapons;
 
 import net.danygames2014.balkonsweapons.api.*;
+import net.danygames2014.balkonsweapons.item.BoomerangItem;
 import net.danygames2014.balkonsweapons.item.FireRodItem;
 import net.danygames2014.balkonsweapons.item.SpearItem;
 import net.danygames2014.balkonsweapons.item.TestItem;
@@ -104,6 +105,8 @@ public class BalkonsWeapons {
         ironSpear = new SpearItem(NAMESPACE.id("iron_spear"));
         goldenSpear = new SpearItem(NAMESPACE.id("golden_spear"));
         diamondSpear = new SpearItem(NAMESPACE.id("diamond_spear"));
+
+        diamondBoomerang = new BoomerangItem(NAMESPACE.id("diamond_boomerang"));
 
         fireRod = new FireRodItem(NAMESPACE.id("fire_rod"));
         testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");

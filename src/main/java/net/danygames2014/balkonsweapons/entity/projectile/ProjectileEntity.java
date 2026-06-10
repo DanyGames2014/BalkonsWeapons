@@ -64,6 +64,14 @@ public class ProjectileEntity extends ArrowEntity implements EntitySpawnDataProv
         dataTracker.startTracking(WEAPON_CRITICAL, (byte)0);
     }
 
+    public Entity getThrower() {
+        return owner;
+    }
+
+    public void setThrower(LivingEntity entity) {
+        owner = entity;
+    }
+
     public void setAim(Entity entity, float f, float f1, float f2, float f3, float f4) {
     }
 

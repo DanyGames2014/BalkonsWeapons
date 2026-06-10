@@ -51,4 +51,9 @@ public class MeleeItem extends TemplateSwordItem implements WeaponItem {
     public ToolMaterial getToolMaterial() {
         return null;
     }
+
+    @Override
+    public int getEntityDamage() {
+        return 0;
+    }
 }

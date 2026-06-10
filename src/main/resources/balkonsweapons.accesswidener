@@ -7,3 +7,4 @@ transitive-inject-interface net/minecraft/client/InteractionManager net/danygame
 transitive-inject-interface net/minecraft/client/render/entity/model/BipedEntityModel net/danygames2014/balkonsweapons/mixininterface/BipedEntityModelWithHold
 
 accessible field net/minecraft/entity/data/DataTracker entries Ljava/util/Map;
+accessible field net/minecraft/client/Minecraft timer Lnet/minecraft/client/util/Timer;

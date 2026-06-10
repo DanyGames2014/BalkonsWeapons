@@ -19,5 +19,7 @@ public interface WeaponItem {
 
     ToolMaterial getToolMaterial();
 
+    int getEntityDamage();
+
 //    RangedComponent getRangedComponent();
 }

@@ -8,4 +8,8 @@ public class DataTrackerUtil {
     public static ItemStack getItemStack(DataTracker tracker, int id) {
         return (ItemStack) ((DataTrackerEntry)tracker.entries.get(id)).get();
     }
+
+    public static Float getFloat(DataTracker tracker, int id) {
+        return (Float) ((DataTrackerEntry)tracker.entries.get(id)).get();
+    }
 }

@@ -21,7 +21,7 @@ public class TestItem extends TemplateItem implements ItemWithHold {
 
     @Override
     public int getMaxUseDuration() {
-        return 40;
+        return 4000;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class TestItem extends TemplateItem implements ItemWithHold {
 
     @Override
     public void usingTick(ItemStack stack, World world, PlayerEntity player, int time) {
-        System.out.println("Using " + time);
+//        System.out.println("Using " + time);
     }
 
     @Override
@@ -50,5 +50,10 @@ public class TestItem extends TemplateItem implements ItemWithHold {
         System.out.println("Finished holding");
         System.out.println(user.getItemInUseTime());
         return stack;
+    }
+
+    @Override
+    public boolean isHandheld() {
+        return true;
     }
 }

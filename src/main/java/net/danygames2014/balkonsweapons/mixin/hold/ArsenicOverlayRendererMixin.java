@@ -2,10 +2,14 @@ package net.danygames2014.balkonsweapons.mixin.hold;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.danygames2014.balkonsweapons.api.TempClass;
 import net.danygames2014.balkonsweapons.api.UseAction;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.ClientPlayerEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.modificationstation.stationapi.impl.client.arsenic.renderer.render.ArsenicOverlayRenderer;
+import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -55,6 +59,20 @@ public class ArsenicOverlayRendererMixin {
             glRotatef(45.0f, 0, 1, 0);
             action.transformFirstPerson(player, stack, tickDelta);
             glRotatef(-45.0f, 0, 1, 0);
+        }
+    }
+
+    @Inject(method = "renderModel(Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/item/ItemStack;)V", at = @At("HEAD"))
+    void renderThirdPersonModel(LivingEntity entity, ItemStack item, CallbackInfo ci) {
+        if(entity instanceof PlayerEntity player && player.isUsingItem()) {
+            GL11.glRotatef(0.0F, 1.0f, 0.0f, 0.0f);
+            GL11.glRotatef(19.50F, 0.0f, 1.0f, 0.0f);
+            GL11.glRotatef(352.50F, 0.0f, 0.0f, 1.0f);
+
+            GL11.glTranslatef(-0.04F, 0.08F, -0.35F);
+
+            GL11.glScalef(1.1f, 1.1f, 1.1f);
+            player.getItemInUse().getUseAction(player.world, player).transformThirdPerson(player, item, 0);
         }
     }
 }

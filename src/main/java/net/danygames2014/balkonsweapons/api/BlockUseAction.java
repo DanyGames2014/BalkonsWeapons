@@ -40,10 +40,15 @@ public class BlockUseAction extends UseAction{
 
     @Override
     public void transformThirdPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
-        GL11.glTranslatef(0.05F, 0.0F, -0.1F);
+        GL11.glTranslatef(0.05F, 0.0F, 0.3F);
         GL11.glRotatef(-50.0F, 0.0F, 1.0F, 0.0F);
         GL11.glRotatef(-10.0F, 1.0F, 0.0F, 0.0F);
         GL11.glRotatef(-60.0F, 0.0F, 0.0F, 1.0F);
+
+//        GL11.glTranslatef(0.05F, 0.05F, -0.0F);
+//        GL11.glRotatef(-31.0F, 0.0F, 1.0F, 0.0F);
+//        GL11.glRotatef(-10.0F, 1.0F, 0.0F, 0.0F);
+//        GL11.glRotatef(-80.0F, 0.0F, 0.0F, 1.0F);
     }
 
 

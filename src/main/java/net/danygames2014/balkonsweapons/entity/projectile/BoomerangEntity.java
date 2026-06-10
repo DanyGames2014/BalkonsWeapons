@@ -178,6 +178,11 @@ public class BoomerangEntity extends MaterialProjectileEntity{
     }
 
     @Override
+    public boolean aimRotation() {
+        return beenInGround || floatStrength < MIN_FLOAT_STRENGTH;
+    }
+
+    @Override
     public int getMaxLifetime() {
         return (pickupStatus == PickupStatus.ALLOWED || pickupStatus == PickupStatus.OWNER_ONLY) ? 0 : 1200;
     }

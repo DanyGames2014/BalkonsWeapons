@@ -26,7 +26,7 @@ public class BoomerangEntityRenderer extends EntityRenderer {
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         GL11.glScalef(0.85f, 0.85f, 0.85f);
 
-        float tickDelta = Minecraft.INSTANCE.timer.partialTick;
+        float tickDelta = Minecraft.INSTANCE.timer.tickDelta;
 
         GL11.glRotatef(boomerang.prevPitch + (boomerang.pitch - boomerang.prevPitch) * tickDelta, 0.0f, 0.0f, 1.0f);
         GL11.glRotatef(boomerang.prevYaw + (boomerang.yaw - boomerang.prevYaw) * tickDelta - 90.0f, 0.0f, 1.0f, 0.0f);

@@ -39,7 +39,7 @@ public class PlayerEntityRendererMixin {
     @Inject(method = "renderMore(Lnet/minecraft/entity/player/PlayerEntity;F)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/item/HeldItemRenderer;renderItem(Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/item/ItemStack;)V", ordinal = 1))
     void transformHeldItem(PlayerEntity player, float tickDelta, CallbackInfo ci) {
         if(player.getItemInUseDuration() > 0) {
-            player.getItemInUse().getUseAction(player.world, player).transformThirdPerson(player, player.getItemInUse(), tickDelta);
+            player.getItemInUse().getUseAction(player.world, player).transformThirdPersonVanilla(player, player.getItemInUse(), tickDelta);
         }
     }
 }

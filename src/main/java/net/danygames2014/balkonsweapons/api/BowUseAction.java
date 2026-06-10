@@ -65,12 +65,12 @@ public class BowUseAction extends UseAction{
     }
 
     @Override
-    public void transformFirstPersonSwingProgress(PlayerEntity player, ItemStack stack, float tickDelta) {
+    public void transformFirstPersonSwingProgressVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
 
     }
 
     @Override
-    public void transformFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
+    public void transformFirstPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
         float var20 = 0;
         GL11.glRotatef(-18.0F, 0.0F, 0.0F, 1.0F);
         GL11.glRotatef(-12.0F, 0.0F, 1.0F, 0.0F);
@@ -103,7 +103,12 @@ public class BowUseAction extends UseAction{
     }
 
     @Override
-    public void transformThirdPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
+    public void transformThirdPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
+
+    }
+
+    @Override
+    public void transformThirdPersonModel(PlayerEntity player, ItemStack stack, float tickDelta) {
 
     }
 }

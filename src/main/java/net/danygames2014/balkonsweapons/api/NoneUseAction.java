@@ -24,17 +24,22 @@ public class NoneUseAction extends UseAction{
     }
 
     @Override
-    public void transformFirstPersonSwingProgress(PlayerEntity player, ItemStack stack, float tickDelta) {
+    public void transformFirstPersonSwingProgressVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
 
     }
 
     @Override
-    public void transformFirstPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
+    public void transformFirstPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
 
     }
 
     @Override
-    public void transformThirdPerson(PlayerEntity player, ItemStack stack, float tickDelta) {
+    public void transformThirdPersonVanilla(PlayerEntity player, ItemStack stack, float tickDelta) {
+
+    }
+
+    @Override
+    public void transformThirdPersonModel(PlayerEntity player, ItemStack stack, float tickDelta) {
 
     }
 

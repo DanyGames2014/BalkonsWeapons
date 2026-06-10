@@ -48,7 +48,7 @@ public class MeleeItem extends TemplateSwordItem implements WeaponItem {
     }
 
     @Override
-    public MeleeComponent getMeleeComponent() {
-        return meleeComponent;
+    public ToolMaterial getToolMaterial() {
+        return null;
     }
 }

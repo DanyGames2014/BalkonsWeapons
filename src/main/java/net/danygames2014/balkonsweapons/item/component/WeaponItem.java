@@ -1,5 +1,7 @@
 package net.danygames2014.balkonsweapons.item.component;
 
+import net.minecraft.item.ToolMaterial;
+
 import java.util.Random;
 import java.util.UUID;
 
@@ -13,7 +15,9 @@ public interface WeaponItem {
 
     Random getItemRandom();
 
-    MeleeComponent getMeleeComponent();
+//    MeleeComponent getMeleeComponent();
+
+    ToolMaterial getToolMaterial();
 
 //    RangedComponent getRangedComponent();
 }

@@ -1,4 +1,4 @@
-package net.danygames2014.balkonsweapons.entity;
+package net.danygames2014.balkonsweapons.entity.projectile;
 
 import com.mojang.serialization.DataResult;
 import net.danygames2014.balkonsweapons.util.EntityUtil;
@@ -62,6 +62,9 @@ public class ProjectileEntity extends ArrowEntity implements EntitySpawnDataProv
     protected void initDataTracker() {
         super.initDataTracker();
         dataTracker.startTracking(WEAPON_CRITICAL, (byte)0);
+    }
+
+    public void setAim(Entity entity, float f, float f1, float f2, float f3, float f4) {
     }
 
     protected void setPickupStatusFromEntity(LivingEntity livingEntity) {

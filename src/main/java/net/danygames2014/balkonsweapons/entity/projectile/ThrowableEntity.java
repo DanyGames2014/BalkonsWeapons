@@ -1,4 +1,4 @@
-package net.danygames2014.balkonsweapons.entity;
+package net.danygames2014.balkonsweapons.entity.projectile;
 
 import net.minecraft.entity.Entity;
 

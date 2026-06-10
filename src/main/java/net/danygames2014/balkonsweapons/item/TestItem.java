@@ -3,6 +3,7 @@ package net.danygames2014.balkonsweapons.item;
 import net.danygames2014.balkonsweapons.api.UseAction;
 import net.danygames2014.balkonsweapons.api.UseActions;
 import net.danygames2014.balkonsweapons.mixininterface.ItemWithHold;
+import net.danygames2014.balkonsweapons.util.PhysHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -49,6 +50,7 @@ public class TestItem extends TemplateItem implements ItemWithHold {
     public ItemStack use(ItemStack stack, World world, PlayerEntity user) {
         System.out.println("Finished holding");
         System.out.println(user.getItemInUseTime());
+        PhysHelper.createAdvancedExplosion(world, user, user.x + 10, user.y, user.z, 3, true, true, true, true, true);
         return stack;
     }
 

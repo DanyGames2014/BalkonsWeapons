@@ -1,10 +1,7 @@
 package net.danygames2014.balkonsweapons;
 
 import net.danygames2014.balkonsweapons.api.*;
-import net.danygames2014.balkonsweapons.item.BoomerangItem;
-import net.danygames2014.balkonsweapons.item.FireRodItem;
-import net.danygames2014.balkonsweapons.item.SpearItem;
-import net.danygames2014.balkonsweapons.item.TestItem;
+import net.danygames2014.balkonsweapons.item.*;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
@@ -114,6 +111,8 @@ public class BalkonsWeapons {
         diamondBoomerang = new BoomerangItem(NAMESPACE.id("diamond_boomerang"), ToolMaterial.DIAMOND);
 
         fireRod = new FireRodItem(NAMESPACE.id("fire_rod"));
+        dynamite = new DynamiteItem(NAMESPACE.id("dynamite"));
+
         testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");
     }
 }

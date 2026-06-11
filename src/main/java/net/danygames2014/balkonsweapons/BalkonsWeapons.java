@@ -112,6 +112,7 @@ public class BalkonsWeapons {
 
         fireRod = new FireRodItem(NAMESPACE.id("fire_rod"));
         dynamite = new DynamiteItem(NAMESPACE.id("dynamite"));
+        javelin = new JavelinItem(NAMESPACE.id("javelin"));
 
         testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");
     }

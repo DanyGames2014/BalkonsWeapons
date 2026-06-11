@@ -101,11 +101,11 @@ public class BalkonsWeapons {
 
         testItem = new TestItem(NAMESPACE.id("test")).setTranslationKey(NAMESPACE, "test_item");
 
-        woodenSpear = new SpearItem(NAMESPACE.id("wooden_spear"));
-        stoneSpear = new SpearItem(NAMESPACE.id("stone_spear"));
-        ironSpear = new SpearItem(NAMESPACE.id("iron_spear"));
-        goldenSpear = new SpearItem(NAMESPACE.id("golden_spear"));
-        diamondSpear = new SpearItem(NAMESPACE.id("diamond_spear"));
+        woodenSpear = new SpearItem(NAMESPACE.id("wooden_spear"), ToolMaterial.WOOD);
+        stoneSpear = new SpearItem(NAMESPACE.id("stone_spear"), ToolMaterial.STONE);
+        ironSpear = new SpearItem(NAMESPACE.id("iron_spear"), ToolMaterial.IRON);
+        goldenSpear = new SpearItem(NAMESPACE.id("golden_spear"), ToolMaterial.GOLD);
+        diamondSpear = new SpearItem(NAMESPACE.id("diamond_spear"), ToolMaterial.DIAMOND);
 
         woodenBoomerang = new BoomerangItem(NAMESPACE.id("wooden_boomerang"), ToolMaterial.WOOD);
         stoneBoomerang = new BoomerangItem(NAMESPACE.id("stone_boomerang"), ToolMaterial.STONE);

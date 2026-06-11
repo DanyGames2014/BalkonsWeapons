@@ -135,7 +135,7 @@ public class BoomerangEntity extends MaterialProjectileEntity{
                 }
                 markDead();
             } else {
-                thrownItem.setDamage(thrownItem.getDamage() + 1); // TODO: make sure to remove itemstack if its broken
+                thrownItem.damage(1, owner);
                 if (thrownItem.count <= 0) {
                     setThrownItemStack(null);
                 }

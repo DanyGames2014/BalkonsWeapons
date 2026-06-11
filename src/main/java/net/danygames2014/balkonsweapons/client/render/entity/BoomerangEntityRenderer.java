@@ -1,5 +1,6 @@
 package net.danygames2014.balkonsweapons.client.render.entity;
 
+import net.danygames2014.balkonsweapons.BalkonsWeapons;
 import net.danygames2014.balkonsweapons.entity.projectile.BoomerangEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.Tessellator;
@@ -116,6 +117,6 @@ public class BoomerangEntityRenderer extends EntityRenderer {
     }
 
     public ItemStack getStackToRender(BoomerangEntity entity) {
-        return entity.getWeapon() != null ? entity.getWeapon() : new ItemStack(Item.DIAMOND);
+        return entity.getWeapon() != null ? entity.getWeapon() : new ItemStack(BalkonsWeapons.woodenBoomerang);
     }
 }

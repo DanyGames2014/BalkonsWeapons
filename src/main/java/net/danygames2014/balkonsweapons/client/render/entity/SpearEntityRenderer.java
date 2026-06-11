@@ -39,7 +39,7 @@ public class SpearEntityRenderer extends EntityRenderer {
                 float f16 = -MathHelper.sin(f15 * 3.0f) * f15;
                 GL11.glRotatef(f16, 0.0f, 0.0f, 1.0f);
             }
-
+            GL11.glTranslatef(-0.35f, -0.35f, 0.0f);
             BakedModelRenderer bakedModelRenderer = RendererAccess.INSTANCE.getRenderer().bakedModelRenderer();
             Tessellator tessellator = Tessellator.INSTANCE;
             tessellator.startQuads();

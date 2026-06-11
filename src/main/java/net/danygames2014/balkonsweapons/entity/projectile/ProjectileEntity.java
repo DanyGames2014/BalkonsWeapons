@@ -282,6 +282,10 @@ public class ProjectileEntity extends ArrowEntity implements EntitySpawnDataProv
 
         float f1 = MathHelper.sqrt(velocityX * velocityX + velocityY * velocityY + velocityZ * velocityZ);
 
+        velocityX = hitResult.pos.x - x;
+        velocityY = hitResult.pos.y - y;
+        velocityZ = hitResult.pos.z - z;
+
         x -= velocityX / f1 * 0.05;
         y -= velocityY / f1 * 0.05;
         z -= velocityZ / f1 * 0.05;

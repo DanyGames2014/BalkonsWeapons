@@ -7,6 +7,7 @@ import net.danygames2014.balkonsweapons.item.SpearItem;
 import net.danygames2014.balkonsweapons.item.TestItem;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.item.Item;
+import net.minecraft.item.ToolMaterial;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.util.Namespace;
@@ -106,7 +107,11 @@ public class BalkonsWeapons {
         goldenSpear = new SpearItem(NAMESPACE.id("golden_spear"));
         diamondSpear = new SpearItem(NAMESPACE.id("diamond_spear"));
 
-        diamondBoomerang = new BoomerangItem(NAMESPACE.id("diamond_boomerang"));
+        woodenBoomerang = new BoomerangItem(NAMESPACE.id("wooden_boomerang"), ToolMaterial.WOOD);
+        stoneBoomerang = new BoomerangItem(NAMESPACE.id("stone_boomerang"), ToolMaterial.STONE);
+        ironBoomerang = new BoomerangItem(NAMESPACE.id("iron_boomerang"), ToolMaterial.IRON);
+        goldenBoomerang = new BoomerangItem(NAMESPACE.id("golden_boomerang"), ToolMaterial.GOLD);
+        diamondBoomerang = new BoomerangItem(NAMESPACE.id("diamond_boomerang"), ToolMaterial.DIAMOND);
 
         fireRod = new FireRodItem(NAMESPACE.id("fire_rod"));
         testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");

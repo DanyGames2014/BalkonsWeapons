@@ -5,6 +5,7 @@ import net.danygames2014.balkonsweapons.api.UseActions;
 import net.danygames2014.balkonsweapons.entity.projectile.BoomerangEntity;
 import net.danygames2014.balkonsweapons.item.component.WeaponItem;
 import net.danygames2014.balkonsweapons.mixininterface.ItemWithHold;
+import net.danygames2014.balkonsweapons.util.ItemUtil;
 import net.danygames2014.nyalib.sound.SoundHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -15,24 +16,9 @@ import net.modificationstation.stationapi.api.util.Identifier;
 
 import java.util.Random;
 
-public class BoomerangItem extends TemplateItem implements ItemWithHold, WeaponItem {
-    public BoomerangItem(Identifier identifier) {
-        super(identifier);
-    }
-
-    @Override
-    public int getMaxUseDuration(ItemStack stack, World world, PlayerEntity player) {
-        return 72000;
-    }
-
-    @Override
-    public void startUsing(ItemStack stack, World world, PlayerEntity player) {
-
-    }
-
-    @Override
-    public void usingTick(ItemStack stack, World world, PlayerEntity player, int time) {
-
+public class BoomerangItem extends MeleeItem {
+    public BoomerangItem(Identifier identifier, ToolMaterial toolMaterial) {
+        super(identifier, MeleeSpecs.BOOMERANG, toolMaterial);
     }
 
     @Override
@@ -62,30 +48,10 @@ public class BoomerangItem extends TemplateItem implements ItemWithHold, WeaponI
         }
         SoundHelper.playSound(player, "random.bow", 0.6F,
                 1.0F / (getItemRandom().nextFloat() * 0.4F + 1.0F));
-//        if (!(entityliving instanceof EntityPlayer) || !((EntityPlayer) entityliving).capabilities.isCreativeMode) {
-//            WMItem.decrStackSize(itemstack, 1, entityliving);
-//        }
+        if(true) { // Creative check
+            ItemUtil.decreaseStackCount(stack, 1, player);
+        }
 
         return false;
-    }
-
-    @Override
-    public UseAction getUseAction(ItemStack stack, World world, PlayerEntity player) {
-        return UseActions.BLOCK;
-    }
-
-    @Override
-    public Random getItemRandom() {
-        return random;
-    }
-
-    @Override
-    public ToolMaterial getToolMaterial() {
-        return ToolMaterial.DIAMOND;
-    }
-
-    @Override
-    public int getEntityDamage() {
-        return 5;
     }
 }

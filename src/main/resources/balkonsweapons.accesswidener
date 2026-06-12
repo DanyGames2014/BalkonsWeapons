@@ -8,3 +8,4 @@ transitive-inject-interface net/minecraft/client/render/entity/model/BipedEntity
 
 accessible field net/minecraft/entity/data/DataTracker entries Ljava/util/Map;
 accessible field net/minecraft/client/Minecraft timer Lnet/minecraft/client/util/Timer;
+accessible field net/minecraft/client/Minecraft INSTANCE Lnet/minecraft/client/Minecraft;

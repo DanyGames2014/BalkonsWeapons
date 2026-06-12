@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
+import net.modificationstation.stationapi.api.template.item.TemplateItem;
 import net.modificationstation.stationapi.api.util.Namespace;
 import org.apache.logging.log4j.Logger;
 
@@ -80,7 +81,7 @@ public class BalkonsWeapons {
     public static Item gunStock;
     public static Item flintlockPistol;
     public static Item cannon;
-    public static Item cannonball;
+    public static Item cannonBall;
     public static Item dynamite;
     public static Item trainingDummy;
 
@@ -119,6 +120,9 @@ public class BalkonsWeapons {
         fireRod = new FireRodItem(NAMESPACE.id("fire_rod"));
         dynamite = new DynamiteItem(NAMESPACE.id("dynamite"));
         javelin = new JavelinItem(NAMESPACE.id("javelin"));
+
+        cannonBall = new TemplateItem(NAMESPACE.id("cannon_ball"));
+        cannon = new CannonItem(NAMESPACE.id("cannon"));
 
         testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");
     }

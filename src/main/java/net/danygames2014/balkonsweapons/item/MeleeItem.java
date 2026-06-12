@@ -62,7 +62,7 @@ public class MeleeItem extends TemplateItem implements WeaponItem, ItemWithHold 
 
     @Override
     public int getAttackDamage(Entity attackedEntity) {
-        return (int) getMaterialDamage();
+        return (int) getEntityDamage();
     }
 
     @Override

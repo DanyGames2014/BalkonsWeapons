@@ -94,7 +94,7 @@ public class CannonEntityRenderer extends EntityRenderer {
     }
 
     protected String getEntityTexture(Entity entity) {
-        return false
+        return true
                        ? "/assets/balkonsweapons/stationapi/textures/entity/cannon_legacy.png"
                        : "/assets/balkonsweapons/stationapi/textures/entity/cannon.png";
     }

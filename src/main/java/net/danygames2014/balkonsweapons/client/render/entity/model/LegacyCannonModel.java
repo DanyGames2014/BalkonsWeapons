@@ -12,26 +12,26 @@ public class LegacyCannonModel extends EntityModel {
 
     public LegacyCannonModel() {
         barrel = new ModelPart(0, 14);
-        barrel.addCuboid(-4.0f, 0.0f, -16.0f, 6, 6, 12, 4.0f);
-        barrel.setPivot(0.0f, 9.0f, 1.0f);
         barrel.pitch = -6.195919f;
         barrel.mirror = true;
+        barrel.addCuboid(-4.0f, 0.0f, -16.0f, 6, 6, 12, 4.0f);
+        barrel.setPivot(0.0f, 9.0f, 1.0f);
         bottom = new ModelPart( 0, 1);
+        bottom.mirror = true;
         bottom.addCuboid(0.0f, 0.0f, 0.0f, 12, 1, 12, 1.0f);
         bottom.setPivot(-7.0f, -1.0f, -5.0f);
-        bottom.mirror = true;
         frame = new ModelPart( 24, 19);
+        frame.mirror = true;
         frame.addCuboid(0.0f, 0.0f, 0.0f, 2, 2, 2, 1.0f);
         frame.setPivot(-2.0f, 2.0f, 0.0f);
-        frame.mirror = true;
         seatBottom = new ModelPart( 6, 5);
+        seatBottom.mirror = true;
         seatBottom.addCuboid(0.0f, 0.0f, 0.0f, 10, 1, 8, 1.0f);
         seatBottom.setPivot(-6.0f, 8.0f, 8.0f);
-        seatBottom.mirror = true;
         seatFrame = new ModelPart( 36, 19);
+        seatFrame.mirror = true;
         seatFrame.addCuboid(0.0f, 0.0f, 0.0f, 2, 1, 12, 1.0f);
         seatFrame.setPivot(-2.0f, 6.0f, 0.0f);
-        seatFrame.mirror = true;
     }
 
     @Override

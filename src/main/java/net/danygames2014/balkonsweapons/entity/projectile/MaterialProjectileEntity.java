@@ -3,6 +3,7 @@ package net.danygames2014.balkonsweapons.entity.projectile;
 import net.danygames2014.balkonsweapons.item.ItemHitEffect;
 import net.danygames2014.balkonsweapons.item.component.WeaponItem;
 import net.danygames2014.balkonsweapons.util.DataTrackerUtil;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.hit.HitResult;
@@ -44,7 +45,7 @@ public class MaterialProjectileEntity  extends ProjectileEntity{
     }
 
     public void setThrownItemStack(@Nullable ItemStack itemstack) {
-        dataTracker.set(WEAPON_ITEM, itemstack);
+        dataTracker.set(WEAPON_ITEM, itemstack != null ? itemstack : new ItemStack(Item.DIAMOND, -1));
         updateWeaponMaterial();
     }
 
@@ -58,7 +59,11 @@ public class MaterialProjectileEntity  extends ProjectileEntity{
     }
 
     public ItemStack getWeapon() {
-        return DataTrackerUtil.getItemStack(dataTracker ,WEAPON_ITEM);
+        ItemStack stack = DataTrackerUtil.getItemStack(dataTracker ,WEAPON_ITEM);
+        if (stack.count == -1) {
+            return null;
+        }
+        return stack;
     }
 
     protected void updateWeaponMaterial() {

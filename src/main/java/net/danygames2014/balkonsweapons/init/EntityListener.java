@@ -1,10 +1,7 @@
 package net.danygames2014.balkonsweapons.init;
 
 import net.danygames2014.balkonsweapons.BalkonsWeapons;
-import net.danygames2014.balkonsweapons.entity.projectile.BoomerangEntity;
-import net.danygames2014.balkonsweapons.entity.projectile.DynamiteEntity;
-import net.danygames2014.balkonsweapons.entity.projectile.JavelinEntity;
-import net.danygames2014.balkonsweapons.entity.projectile.SpearEntity;
+import net.danygames2014.balkonsweapons.entity.projectile.*;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.modificationstation.stationapi.api.event.entity.EntityRegisterEvent;
 
@@ -15,5 +12,6 @@ public class EntityListener {
         event.register(BalkonsWeapons.NAMESPACE.id("spear"), SpearEntity.class);
         event.register(BalkonsWeapons.NAMESPACE.id("dynamite"), DynamiteEntity.class);
         event.register(BalkonsWeapons.NAMESPACE.id("javelin"), JavelinEntity.class);
+        event.register(BalkonsWeapons.NAMESPACE.id("knife"), KnifeEntity.class);
     }
 }

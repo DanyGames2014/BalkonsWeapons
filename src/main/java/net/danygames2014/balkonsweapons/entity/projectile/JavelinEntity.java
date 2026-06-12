@@ -46,7 +46,7 @@ public class JavelinEntity extends ProjectileEntity {
             damage += random.nextInt(damage / 2 + 2);
         }
         Entity entity = hitResult.entity;
-        if (entity.damage(owner, damage)) {
+        if (entity.damage(getDamagingEntity(), damage)) {
             applyEntityHitEffects(entity);
             playHitSound();
             markDead();

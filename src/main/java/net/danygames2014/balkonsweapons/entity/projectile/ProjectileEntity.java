@@ -72,6 +72,11 @@ public class ProjectileEntity extends ArrowEntity implements EntitySpawnDataProv
         owner = entity;
     }
 
+    public Entity getDamagingEntity() {
+        Entity shooter = getThrower();
+        return shooter != null ? shooter : this;
+    }
+
     public void setAim(Entity entity, float f, float f1, float f2, float f3, float f4) {
     }
 

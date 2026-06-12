@@ -125,7 +125,7 @@ public class BoomerangEntity extends MaterialProjectileEntity{
         if (getIsCritical()) {
             damage += 2.0f;
         }
-        if (entity.damage(getThrower(), (int)damage)) {
+        if (entity.damage(getDamagingEntity(), (int)damage)) {
             applyEntityHitEffects(entity);
             playHitSound();
             if (thrownItem.getDamage() + 1 >= thrownItem.getMaxDamage()) {
@@ -135,7 +135,7 @@ public class BoomerangEntity extends MaterialProjectileEntity{
                 }
                 markDead();
             } else {
-                thrownItem.damage(1, owner);
+                thrownItem.damage(1, getDamagingEntity());
                 if (thrownItem.count <= 0) {
                     setThrownItemStack(null);
                 }

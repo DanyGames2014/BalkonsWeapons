@@ -10,6 +10,12 @@ item.balkonsweapons.iron_boomerang.name=Iron Boomerang
 item.balkonsweapons.golden_boomerang.name=Golden Boomerang
 item.balkonsweapons.diamond_boomerang.name=Diamond Boomerang
 
+item.balkonsweapons.wooden_knife.name=Wooden Knife
+item.balkonsweapons.stone_knife.name=Stone Knife
+item.balkonsweapons.iron_knife.name=Iron Knife
+item.balkonsweapons.golden_knife.name=Golden Knife
+item.balkonsweapons.diamond_knife.name=Diamond Knife
+
 item.balkonsweapons.dynamite.name=Dynamite
 item.balkonsweapons.javelin.name=Javelin
 item.balkonsweapons.fire_rod.name=Fire Rod

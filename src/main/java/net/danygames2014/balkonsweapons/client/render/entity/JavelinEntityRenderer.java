@@ -25,7 +25,7 @@ public class JavelinEntityRenderer extends EntityRenderer {
         float tickDelta = Minecraft.INSTANCE.timer.tickDelta;
 
         if(false) {
-            bindTexture("/assets/balkonsweapons/stationapi/textures/entity/javelin.png");
+            bindTexture("/assets/balkonsweapons/stationapi/textures/entity/spear.png");
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
             GL11.glPushMatrix();
             GL11.glDisable(GL11.GL_LIGHTING);

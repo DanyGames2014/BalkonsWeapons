@@ -23,9 +23,11 @@ item.balkonsweapons.training_dummy.name=Training Dummy
 
 item.balkonsweapons.blunderbuss.name=Blunderbuss
 item.balkonsweapons.hand_mortar.name=Hand Mortar
+item.balkonsweapons.flintlock_pistol.name=Flintlock Pistol
 
 item.balkonsweapons.cannon_ball.name=Cannon Ball
 item.balkonsweapons.blunderbuss_shot.name=Blunderbuss Shot
 item.balkonsweapons.mortar_shell.name=Mortar Shell
+item.balkonsweapons.musket_round.name=Musket Round
 
 item.balkonsweapons.cannon.name=Cannon

@@ -19,5 +19,6 @@ public class EntityRendererListener {
         event.renderers.put(CannonEntity.class, new CannonEntityRenderer());
         event.renderers.put(DummyEntity.class, new DummyEntityRenderer());
         event.renderers.put(MortarShellEntity.class, new MortarShellEntityRenderer());
+        event.renderers.put(MusketBulletEntity.class, new MusketBulletEntityRenderer());
     }
 }

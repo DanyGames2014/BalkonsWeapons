@@ -126,10 +126,12 @@ public class BalkonsWeapons {
 
         blunderbuss = new BlunderbussItem(NAMESPACE.id("blunderbuss"));
         handMortar = new MortarItem(NAMESPACE.id("hand_mortar"));
+        flintlockPistol = new FlintlockItem(NAMESPACE.id("flintlock_pistol"));
 
         blunderbussShot = new TemplateItem(NAMESPACE.id("blunderbuss_shot"));
         mortarShell = new TemplateItem(NAMESPACE.id("mortar_shell"));
         cannonBall = new TemplateItem(NAMESPACE.id("cannon_ball"));
+        musketRound = new TemplateItem(NAMESPACE.id("musket_round"));
 
         testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");
     }

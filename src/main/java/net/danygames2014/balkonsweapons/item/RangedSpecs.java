@@ -15,9 +15,9 @@ import java.util.stream.Collectors;
 public enum RangedSpecs {
     BLOWGUN("blowgun", 250, "dart"),
     CROSSBOW("crossbow", 250, "bolt"),
-    MUSKET("musket", 80, "bullet"),
+    MUSKET("musket", 80, "musket_round"),
     BLUNDERBUSS("blunderbuss", 80, "blunderbuss_shot"),
-    FLINTLOCK("flintlock", 8, "bullet"),
+    FLINTLOCK("flintlock", 8, "musket_round"),
     MORTAR("mortar", 40, "mortar_shell");
 
     private int reloadTime;

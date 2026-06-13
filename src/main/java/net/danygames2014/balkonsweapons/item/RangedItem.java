@@ -41,6 +41,7 @@ public class RangedItem extends MeleeItem{
     public RangedItem(Identifier identifier, MeleeSpecs meleeSpecs, ToolMaterial toolMaterial, RangedSpecs rangedSpecs) {
         super(identifier, meleeSpecs, toolMaterial);
         this.rangedSpecs = rangedSpecs;
+        setItemProperties();
     }
 
     @Override
@@ -50,7 +51,7 @@ public class RangedItem extends MeleeItem{
 
     @Override
     public int getAttackDamage(Entity attackedEntity) {
-        return 0;
+        return 1;
     }
 
     @Override

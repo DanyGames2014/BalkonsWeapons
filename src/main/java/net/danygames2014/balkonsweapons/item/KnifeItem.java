@@ -10,9 +10,15 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.World;
 import net.modificationstation.stationapi.api.util.Identifier;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class KnifeItem extends MeleeItem{
+    public static Map<ToolMaterial, KnifeItem> ALL_KNIFES = new HashMap<>();
+
     public KnifeItem(Identifier identifier, ToolMaterial toolMaterial) {
         super(identifier, MeleeSpecs.KNIFE, toolMaterial);
+        ALL_KNIFES.put(toolMaterial, this);
     }
 
     @Override

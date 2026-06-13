@@ -128,6 +128,13 @@ public class BalkonsWeapons {
         handMortar = new MortarItem(NAMESPACE.id("hand_mortar"));
         flintlockPistol = new FlintlockItem(NAMESPACE.id("flintlock_pistol"));
 
+        musket = new MusketItem(NAMESPACE.id("musket"));
+        woodenBayonetMusket = new MusketItem(NAMESPACE.id("wooden_bayonet_musket"), ToolMaterial.WOOD);
+        stoneBayonetMusket = new MusketItem(NAMESPACE.id("stone_bayonet_musket"), ToolMaterial.STONE);
+        ironBayonetMusket = new MusketItem(NAMESPACE.id("iron_bayonet_musket"), ToolMaterial.IRON);
+        goldenBayonetMusket = new MusketItem(NAMESPACE.id("golden_bayonet_musket"), ToolMaterial.GOLD);
+        diamondBayonetMusket = new MusketItem(NAMESPACE.id("diamond_bayonet_musket"), ToolMaterial.DIAMOND);
+
         blunderbussShot = new TemplateItem(NAMESPACE.id("blunderbuss_shot"));
         mortarShell = new TemplateItem(NAMESPACE.id("mortar_shell"));
         cannonBall = new TemplateItem(NAMESPACE.id("cannon_ball"));

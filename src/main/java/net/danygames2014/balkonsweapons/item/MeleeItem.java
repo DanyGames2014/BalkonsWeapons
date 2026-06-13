@@ -28,7 +28,7 @@ public class MeleeItem extends TemplateItem implements WeaponItem, ItemWithHold 
         super(identifier);
         this.meleeSpecs = meleeSpecs;
         this.toolMaterial = toolMaterial;
-        if(meleeSpecs != null) {
+        if(meleeSpecs != null && !(this instanceof RangedItem)) {
             setItemProperties();
         }
         setMaxCount(1);
@@ -59,7 +59,7 @@ public class MeleeItem extends TemplateItem implements WeaponItem, ItemWithHold 
                 attacker.attackCooldown -= (int) (f / getAttackDelay(stack, target, attacker));
             }
         }
-        if(attacker instanceof PlayerEntity player) {
+        if(attacker instanceof PlayerEntity player && !(this instanceof RangedItem)) {
             ItemUtil.damageItem(stack, meleeSpecs.dmgFromEntity, player);
         }
         return true;

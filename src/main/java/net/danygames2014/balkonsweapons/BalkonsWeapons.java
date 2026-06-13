@@ -120,6 +120,7 @@ public class BalkonsWeapons {
         fireRod = new FireRodItem(NAMESPACE.id("fire_rod"));
         dynamite = new DynamiteItem(NAMESPACE.id("dynamite"));
         javelin = new JavelinItem(NAMESPACE.id("javelin"));
+        trainingDummy = new DummyItem(NAMESPACE.id("training_dummy"));
 
         cannonBall = new TemplateItem(NAMESPACE.id("cannon_ball"));
         cannon = new CannonItem(NAMESPACE.id("cannon"));

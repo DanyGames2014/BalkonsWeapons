@@ -2,6 +2,7 @@ package net.danygames2014.balkonsweapons.init;
 
 import net.danygames2014.balkonsweapons.client.render.entity.*;
 import net.danygames2014.balkonsweapons.entity.CannonEntity;
+import net.danygames2014.balkonsweapons.entity.DummyEntity;
 import net.danygames2014.balkonsweapons.entity.projectile.*;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.modificationstation.stationapi.api.client.event.render.entity.EntityRendererRegisterEvent;
@@ -16,5 +17,6 @@ public class EntityRendererListener {
         event.renderers.put(KnifeEntity.class, new KnifeEntityRenderer());
         event.renderers.put(CannonBallEntity.class, new CannonBallEntityRenderer());
         event.renderers.put(CannonEntity.class, new CannonEntityRenderer());
+        event.renderers.put(DummyEntity.class, new DummyEntityRenderer());
     }
 }

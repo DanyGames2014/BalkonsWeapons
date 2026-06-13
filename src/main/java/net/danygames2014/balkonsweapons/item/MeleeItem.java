@@ -28,7 +28,9 @@ public class MeleeItem extends TemplateItem implements WeaponItem, ItemWithHold 
         super(identifier);
         this.meleeSpecs = meleeSpecs;
         this.toolMaterial = toolMaterial;
-        setItemProperties();
+        if(meleeSpecs != null) {
+            setItemProperties();
+        }
         setMaxCount(1);
     }
 
@@ -44,6 +46,9 @@ public class MeleeItem extends TemplateItem implements WeaponItem, ItemWithHold 
     // TODO: hack, need some other way to delay the player from attacking
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if(meleeSpecs == null) {
+            return false;
+        }
         if(attacker.attackCooldown == 0) {
             float kb = getKnockback(stack, target, attacker);
             PhysHelper.knockback(target, attacker, kb);
@@ -82,6 +87,9 @@ public class MeleeItem extends TemplateItem implements WeaponItem, ItemWithHold 
 
     @Override
     public float getEntityDamage() {
+        if(meleeSpecs == null) {
+            return 0.0F;
+        }
         return meleeSpecs.damageBase + getMaterialDamage();
     }
 
@@ -92,7 +100,7 @@ public class MeleeItem extends TemplateItem implements WeaponItem, ItemWithHold 
 
     @Override
     public float getMaterialDamage() {
-        if(toolMaterial == null) {
+        if(toolMaterial == null || meleeSpecs == null) {
             return 0.0F;
         }
         return toolMaterial.getAttackDamage() * meleeSpecs.damageMult;
@@ -133,6 +141,9 @@ public class MeleeItem extends TemplateItem implements WeaponItem, ItemWithHold 
 
     @Override
     public float getKnockback(ItemStack stack, LivingEntity target, LivingEntity source) {
+        if(meleeSpecs == null) {
+            return 0.0F;
+        }
         return meleeSpecs.getKnockBack(toolMaterial);
     }
 

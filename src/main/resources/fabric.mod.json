@@ -27,6 +27,9 @@
       "net.danygames2014.balkonsweapons.init.EntityRendererListener"
     ],
     "stationapi:event_bus_server": [
+    ],
+    "gcapi3": [
+      "net.danygames2014.balkonsweapons.config.Config"
     ]
   },
   "mixins": [

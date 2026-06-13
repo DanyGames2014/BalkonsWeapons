@@ -21,5 +21,8 @@ item.balkonsweapons.javelin.name=Javelin
 item.balkonsweapons.fire_rod.name=Fire Rod
 item.balkonsweapons.training_dummy.name=Training Dummy
 
+item.balkonsweapons.blunderbuss.name=Blunderbuss
+item.balkonsweapons.blunderbuss_shot.name=Blunderbuss Shot
+
 item.balkonsweapons.cannon_ball.name=Cannon Ball
 item.balkonsweapons.cannon.name=Cannon

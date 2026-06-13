@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "balkonsweapons:item/blunderbuss_shot"
+    "layer0": "balkonsweapons:item/mortar_shell"
   }
 }

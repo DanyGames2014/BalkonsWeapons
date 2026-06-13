@@ -122,11 +122,14 @@ public class BalkonsWeapons {
         javelin = new JavelinItem(NAMESPACE.id("javelin"));
         trainingDummy = new DummyItem(NAMESPACE.id("training_dummy"));
 
-        cannonBall = new TemplateItem(NAMESPACE.id("cannon_ball"));
         cannon = new CannonItem(NAMESPACE.id("cannon"));
 
         blunderbuss = new BlunderbussItem(NAMESPACE.id("blunderbuss"));
+        handMortar = new MortarItem(NAMESPACE.id("hand_mortar"));
+
         blunderbussShot = new TemplateItem(NAMESPACE.id("blunderbuss_shot"));
+        mortarShell = new TemplateItem(NAMESPACE.id("mortar_shell"));
+        cannonBall = new TemplateItem(NAMESPACE.id("cannon_ball"));
 
         testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");
     }

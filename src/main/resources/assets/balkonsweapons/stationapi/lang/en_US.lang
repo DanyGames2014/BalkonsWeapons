@@ -22,7 +22,10 @@ item.balkonsweapons.fire_rod.name=Fire Rod
 item.balkonsweapons.training_dummy.name=Training Dummy
 
 item.balkonsweapons.blunderbuss.name=Blunderbuss
-item.balkonsweapons.blunderbuss_shot.name=Blunderbuss Shot
+item.balkonsweapons.hand_mortar.name=Hand Mortar
 
 item.balkonsweapons.cannon_ball.name=Cannon Ball
+item.balkonsweapons.blunderbuss_shot.name=Blunderbuss Shot
+item.balkonsweapons.mortar_shell.name=Mortar Shell
+
 item.balkonsweapons.cannon.name=Cannon

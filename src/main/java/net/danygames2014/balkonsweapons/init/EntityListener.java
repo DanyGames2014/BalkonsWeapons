@@ -19,5 +19,6 @@ public class EntityListener {
         event.register(BalkonsWeapons.NAMESPACE.id("cannon"), CannonEntity.class);
         event.register(BalkonsWeapons.NAMESPACE.id("dummy"), DummyEntity.class);
         event.register(BalkonsWeapons.NAMESPACE.id("blunder_shot"), BlunderShotEntity.class);
+        event.register(BalkonsWeapons.NAMESPACE.id("mortar_shell"), MortarShellEntity.class);
     }
 }

@@ -18,7 +18,7 @@ public enum RangedSpecs {
     MUSKET("musket", 80, "bullet"),
     BLUNDERBUSS("blunderbuss", 80, "blunderbuss_shot"),
     FLINTLOCK("flintlock", 8, "bullet"),
-    MORTAR("mortar", 40, "shell");
+    MORTAR("mortar", 40, "mortar_shell");
 
     private int reloadTime;
     private List<Item> ammoItems;

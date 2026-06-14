@@ -20,7 +20,6 @@ public enum RangedSpecs {
     FLINTLOCK("flintlock", 8, "musket_round"),
     MORTAR("mortar", 40, "mortar_shell");
 
-    private int reloadTime;
     private List<Item> ammoItems;
     private final String[] ammoItemTags;
     public final String reloadTimeTag;
@@ -31,14 +30,10 @@ public enum RangedSpecs {
         reloadTimeTag = reloadtimetag;
         this.durability = durability;
         ammoItems = null;
-        reloadTime = -1;
     }
 
     public int getReloadTime() {
-        if (reloadTime < 0) {
-            reloadTime = Config.RELOAD_CONFIG.getReloadTime(BalkonsWeapons.NAMESPACE.id(reloadTimeTag));
-        }
-        return reloadTime;
+        return Config.RELOAD_CONFIG.getReloadTime(BalkonsWeapons.NAMESPACE.id(reloadTimeTag));
     }
 
     public List<Item> getAmmoItems() {

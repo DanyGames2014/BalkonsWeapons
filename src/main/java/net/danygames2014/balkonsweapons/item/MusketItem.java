@@ -118,6 +118,9 @@ public class MusketItem extends RangedItem implements CustomTooltipProvider {
 
     @Override
     public int getAttackDamage(Entity attackedEntity) {
+        if(meleeSpecs == null) {
+            return 1;
+        }
         return (int) getEntityDamage();
     }
 

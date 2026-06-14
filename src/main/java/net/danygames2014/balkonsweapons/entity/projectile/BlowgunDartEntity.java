@@ -1,5 +1,6 @@
 package net.danygames2014.balkonsweapons.entity.projectile;
 
+import net.danygames2014.balkonsweapons.effect.SlownessEffect;
 import net.danygames2014.nyalib.sound.SoundHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -7,6 +8,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.modificationstation.stationapi.api.effect.EntityEffectType;
+import net.modificationstation.stationapi.api.effect.EntityEffectTypeRegistry;
+import net.modificationstation.stationapi.api.util.Identifier;
 
 public class BlowgunDartEntity extends MaterialProjectileEntity{
     public BlowgunDartEntity(World world) {
@@ -44,6 +48,13 @@ public class BlowgunDartEntity extends MaterialProjectileEntity{
         Entity entity = hitResult.entity;
         if (entity.damage(getDamagingEntity(), (int)(1.0f + extraDamage))) {
             if (entity instanceof LivingEntity livingEntity) {
+                if(getWeapon() != null  && getWeapon().getStationNbt().contains("effect") && getWeapon().getStationNbt().contains("duration")) {
+                    Identifier effectId = Identifier.of(getWeapon().getStationNbt().getString("effect"));
+                    EntityEffectType<?> effect = EntityEffectTypeRegistry.INSTANCE.get(effectId);
+                    if(effect != null) {
+                        livingEntity.addEffect(effect, getWeapon().getStationNbt().getInt("duration"));
+                    }
+                }
                 // TODO: apply effect
 //                for (PotionEffect pe : ItemBlowgunDart.getEffects(getWeapon())) {
 //                    Potion type = Potion.potionTypes[pe.getPotionID()];

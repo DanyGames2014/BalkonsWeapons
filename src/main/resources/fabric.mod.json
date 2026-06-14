@@ -21,7 +21,8 @@
     "stationapi:event_bus": [
       "net.danygames2014.balkonsweapons.BalkonsWeapons",
       "net.danygames2014.balkonsweapons.init.EntityListener",
-      "net.danygames2014.balkonsweapons.init.PacketListener"
+      "net.danygames2014.balkonsweapons.init.PacketListener",
+      "net.danygames2014.balkonsweapons.init.EffectListener"
     ],
     "stationapi:event_bus_client": [
       "net.danygames2014.balkonsweapons.init.EntityRendererListener",

@@ -42,3 +42,6 @@ item.balkonsweapons.crossbow_bolt.name=Crossbow Bolt
 item.balkonsweapons.blowgun_dart.name=Poisonous Dart
 
 item.balkonsweapons.cannon.name=Cannon
+
+gui.stationapi.effect.balkonsweapons.slowness.name=Slowness
+gui.stationapi.effect.balkonsweapons.slowness.desc=Makes you slower

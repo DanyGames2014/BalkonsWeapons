@@ -144,6 +144,8 @@ public class BalkonsWeapons {
         crossbowBolt = new TemplateItem(NAMESPACE.id("crossbow_bolt"));
         blowgunDart = new BlowgunDartItem(NAMESPACE.id("blowgun_dart"));
 
+        ((BlowgunDartItem)blowgunDart).addDartType(NAMESPACE.id("slowness"), 360, 0xA6FFE3);
+
         testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");
     }
 }

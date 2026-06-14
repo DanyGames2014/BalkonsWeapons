@@ -76,7 +76,6 @@ public class BlowgunItem extends RangedItem{
     @Override
     public void soundCharge(ItemStack itemstack, World world, PlayerEntity player) {
         SoundHelper.playSound(player, "random.breath", 1.0F, 1.0F / (random.nextFloat() * 0.4F + 0.8F));
-        System.out.println("sound");
     }
 
     @Override

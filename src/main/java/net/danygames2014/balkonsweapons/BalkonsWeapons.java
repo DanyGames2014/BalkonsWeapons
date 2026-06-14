@@ -63,7 +63,7 @@ public class BalkonsWeapons {
     public static Item heavyCrossbow;
     public static Item crossbowBolt;
     public static Item blowgun;
-    public static Item poisonousDart;
+    public static Item blowgunDart;
     public static Item woodenBayonetMusket;
     public static Item stoneBayonetMusket;
     public static Item ironBayonetMusket;
@@ -128,6 +128,7 @@ public class BalkonsWeapons {
         handMortar = new MortarItem(NAMESPACE.id("hand_mortar"));
         flintlockPistol = new FlintlockItem(NAMESPACE.id("flintlock_pistol"));
         heavyCrossbow = new CrossbowItem(NAMESPACE.id("heavy_crossbow"));
+        blowgun = new BlowgunItem(NAMESPACE.id("blowgun"));
 
         musket = new MusketItem(NAMESPACE.id("musket"));
         woodenBayonetMusket = new MusketItem(NAMESPACE.id("wooden_bayonet_musket"), ToolMaterial.WOOD);
@@ -141,6 +142,7 @@ public class BalkonsWeapons {
         cannonBall = new TemplateItem(NAMESPACE.id("cannon_ball"));
         musketRound = new TemplateItem(NAMESPACE.id("musket_round"));
         crossbowBolt = new TemplateItem(NAMESPACE.id("crossbow_bolt"));
+        blowgunDart = new BlowgunDartItem(NAMESPACE.id("blowgun_dart"));
 
         testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");
     }

@@ -25,6 +25,7 @@ item.balkonsweapons.blunderbuss.name=Blunderbuss
 item.balkonsweapons.hand_mortar.name=Hand Mortar
 item.balkonsweapons.flintlock_pistol.name=Flintlock Pistol
 item.balkonsweapons.heavy_crossbow.name=Heavy Crossbow
+item.balkonsweapons.blowgun.name=Blowgun
 
 item.balkonsweapons.musket.name=Musket
 item.balkonsweapons.wooden_bayonet_musket.name=Musket with Wooden Bayonet
@@ -38,5 +39,6 @@ item.balkonsweapons.blunderbuss_shot.name=Blunderbuss Shot
 item.balkonsweapons.mortar_shell.name=Mortar Shell
 item.balkonsweapons.musket_round.name=Musket Round
 item.balkonsweapons.crossbow_bolt.name=Crossbow Bolt
+item.balkonsweapons.blowgun_dart.name=Poisonous Dart
 
 item.balkonsweapons.cannon.name=Cannon

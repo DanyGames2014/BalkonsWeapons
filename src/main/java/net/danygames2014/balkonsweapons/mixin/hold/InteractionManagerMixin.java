@@ -20,7 +20,7 @@ public class InteractionManagerMixin implements InteractionManagerWithHold {
 
     @WrapOperation(method = "interactItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;use(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;)Lnet/minecraft/item/ItemStack;"))
     ItemStack attemptUse(ItemStack instance, World world, PlayerEntity user, Operation<ItemStack> original){
-        if(instance.attemptHold(world, user)) {
+        if(user.isUsingItem() || instance.attemptHold(world, user)) {
             return instance;
         } else {
             return original.call(instance, world, user);

@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public enum RangedSpecs {
-    BLOWGUN("blowgun", 250, "dart"),
+    BLOWGUN("blowgun", 250, "blowgun_dart"),
     CROSSBOW("crossbow", 250, "crossbow_bolt"),
     MUSKET("musket", 80, "musket_round"),
     BLUNDERBUSS("blunderbuss", 80, "blunderbuss_shot"),

@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "balkonsweapons:item/dart_head",
+    "layer1": "balkonsweapons:item/dart_feather"
+  }
+}

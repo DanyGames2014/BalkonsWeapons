@@ -24,7 +24,8 @@
       "net.danygames2014.balkonsweapons.init.PacketListener"
     ],
     "stationapi:event_bus_client": [
-      "net.danygames2014.balkonsweapons.init.EntityRendererListener"
+      "net.danygames2014.balkonsweapons.init.EntityRendererListener",
+      "net.danygames2014.balkonsweapons.init.ColorProviderListener"
     ],
     "stationapi:event_bus_server": [
     ],

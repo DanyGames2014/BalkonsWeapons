@@ -21,5 +21,6 @@ public class EntityRendererListener {
         event.renderers.put(BlunderShotEntity.class, new BlunderShotEntityRenderer());
         event.renderers.put(MortarShellEntity.class, new MortarShellEntityRenderer());
         event.renderers.put(MusketBulletEntity.class, new MusketBulletEntityRenderer());
+        event.renderers.put(CrossbowBoltEntity.class, new CrossbowBoltEntityRenderer());
     }
 }

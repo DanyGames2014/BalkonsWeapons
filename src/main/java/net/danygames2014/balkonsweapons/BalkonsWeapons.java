@@ -127,6 +127,7 @@ public class BalkonsWeapons {
         blunderbuss = new BlunderbussItem(NAMESPACE.id("blunderbuss"));
         handMortar = new MortarItem(NAMESPACE.id("hand_mortar"));
         flintlockPistol = new FlintlockItem(NAMESPACE.id("flintlock_pistol"));
+        heavyCrossbow = new CrossbowItem(NAMESPACE.id("heavy_crossbow"));
 
         musket = new MusketItem(NAMESPACE.id("musket"));
         woodenBayonetMusket = new MusketItem(NAMESPACE.id("wooden_bayonet_musket"), ToolMaterial.WOOD);
@@ -139,6 +140,7 @@ public class BalkonsWeapons {
         mortarShell = new TemplateItem(NAMESPACE.id("mortar_shell"));
         cannonBall = new TemplateItem(NAMESPACE.id("cannon_ball"));
         musketRound = new TemplateItem(NAMESPACE.id("musket_round"));
+        crossbowBolt = new TemplateItem(NAMESPACE.id("crossbow_bolt"));
 
         testItem2 = new TestItem(NAMESPACE.id("test2")).setTranslationKey(NAMESPACE, "test_item2");
     }

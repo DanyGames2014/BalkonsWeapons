@@ -7,11 +7,13 @@ import net.danygames2014.nyalib.sound.SoundHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.util.hit.HitResultType;
 import net.minecraft.world.World;
+import net.modificationstation.stationapi.api.item.CustomReachProvider;
 import net.modificationstation.stationapi.api.template.item.TemplateItem;
 import net.modificationstation.stationapi.api.util.Identifier;
 
-public class SpearItem extends MeleeItem {
+public class SpearItem extends MeleeItem implements CustomReachProvider {
     public SpearItem(Identifier identifier, ToolMaterial toolMaterial) {
         super(identifier, MeleeSpecs.SPEAR, toolMaterial);
         setMaxCount(1);
@@ -44,5 +46,10 @@ public class SpearItem extends MeleeItem {
         }
 
         return stack;
+    }
+
+    @Override
+    public double getReach(ItemStack stack, PlayerEntity player, HitResultType type, double currentReach) {
+        return 4;
     }
 }

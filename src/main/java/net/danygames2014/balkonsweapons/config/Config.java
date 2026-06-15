@@ -5,4 +5,7 @@ import net.glasslauncher.mods.gcapi3.api.ConfigRoot;
 public class Config {
     @ConfigRoot(value = "reload", visibleName = "Reload Config")
     public static final ReloadConfig RELOAD_CONFIG = new ReloadConfig();
+
+    @ConfigRoot(value = "legacy", visibleName = "Legacy Config")
+    public static final LegacyConfig LEGACY_CONFIG = new LegacyConfig();
 }

@@ -1,6 +1,7 @@
 package net.danygames2014.balkonsweapons.client.render.entity;
 
 import net.danygames2014.balkonsweapons.BalkonsWeapons;
+import net.danygames2014.balkonsweapons.config.Config;
 import net.danygames2014.balkonsweapons.entity.projectile.BoomerangEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.Tessellator;
@@ -22,7 +23,7 @@ public class BoomerangEntityRenderer extends EntityRenderer {
     public void render(Entity entity, double x, double y, double z, float yaw, float pitch) {
         BoomerangEntity boomerang = (BoomerangEntity) entity;
         float tickDelta = Minecraft.INSTANCE.timer.tickDelta;
-        if(false) {
+        if(Config.LEGACY_CONFIG.legacyBoomerang) {
             bindTexture("/assets/balkonsweapons/stationapi/textures/entity/boomerang.png");
             GL11.glPushMatrix();
             GL11.glDisable(GL11.GL_LIGHTING);

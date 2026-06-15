@@ -3,6 +3,7 @@ package net.danygames2014.balkonsweapons.client.render.entity;
 import net.danygames2014.balkonsweapons.client.render.entity.model.CannonBarrelModel;
 import net.danygames2014.balkonsweapons.client.render.entity.model.LegacyCannonModel;
 import net.danygames2014.balkonsweapons.client.render.entity.model.StandardCannonModel;
+import net.danygames2014.balkonsweapons.config.Config;
 import net.danygames2014.balkonsweapons.entity.CannonEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.entity.EntityRenderer;
@@ -22,9 +23,7 @@ public class CannonEntityRenderer extends EntityRenderer {
         yaw = interpolateRotation(cannon.prevYaw, cannon.yaw, tickDelta);
         GL11.glPushMatrix();
 
-        boolean legacyCannonModel = true;
-
-        if (legacyCannonModel) {
+        if (Config.LEGACY_CONFIG.legacyCannon) {
             GL11.glTranslated(x, y - 0.2, z);
             GL11.glRotatef(-yaw, 0.0f, 1.0f, 0.0f);
         } else {
@@ -46,7 +45,7 @@ public class CannonEntityRenderer extends EntityRenderer {
                     cannon.getBrightnessAtEyes(tickDelta) * f4);
         }
 
-        if (legacyCannonModel) {
+        if (Config.LEGACY_CONFIG.legacyCannon) {
             GL11.glScalef(-1.0f, -1.0f, 1.0f);
             GL11.glRotatef(180.0f, 1.0f, 0.0f, 0.0f);
             legacyModel.barrel.pitch = Math.max(-cannon.pitch / 120.0f, -0.25f);
@@ -94,7 +93,7 @@ public class CannonEntityRenderer extends EntityRenderer {
     }
 
     protected String getEntityTexture(Entity entity) {
-        return true
+        return Config.LEGACY_CONFIG.legacyCannon
                        ? "/assets/balkonsweapons/stationapi/textures/entity/cannon_legacy.png"
                        : "/assets/balkonsweapons/stationapi/textures/entity/cannon.png";
     }

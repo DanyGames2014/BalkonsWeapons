@@ -1,6 +1,7 @@
 package net.danygames2014.balkonsweapons.client.render.entity;
 
 import net.danygames2014.balkonsweapons.BalkonsWeapons;
+import net.danygames2014.balkonsweapons.config.Config;
 import net.danygames2014.balkonsweapons.entity.projectile.BoomerangEntity;
 import net.danygames2014.balkonsweapons.entity.projectile.JavelinEntity;
 import net.minecraft.client.Minecraft;
@@ -24,7 +25,7 @@ public class JavelinEntityRenderer extends EntityRenderer {
         JavelinEntity javelin = (JavelinEntity) entity;
         float tickDelta = Minecraft.INSTANCE.timer.tickDelta;
 
-        if(false) {
+        if(Config.LEGACY_CONFIG.legacyJavelin) {
             bindTexture("/assets/balkonsweapons/stationapi/textures/entity/spear.png");
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
             GL11.glPushMatrix();

@@ -1,6 +1,7 @@
 package net.danygames2014.balkonsweapons.client.render.entity;
 
 import net.danygames2014.balkonsweapons.BalkonsWeapons;
+import net.danygames2014.balkonsweapons.config.Config;
 import net.danygames2014.balkonsweapons.entity.projectile.BoomerangEntity;
 import net.danygames2014.balkonsweapons.entity.projectile.SpearEntity;
 import net.minecraft.client.Minecraft;
@@ -24,7 +25,7 @@ public class SpearEntityRenderer extends EntityRenderer {
     public void render(Entity entity, double x, double y, double z, float yaw, float pitch) {
         SpearEntity spear = (SpearEntity) entity;
         float tickDelta = Minecraft.INSTANCE.timer.tickDelta;
-        if(false) {
+        if(Config.LEGACY_CONFIG.legacySpear) {
             bindTexture("/assets/balkonsweapons/stationapi/textures/entity/spear.png");
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
             GL11.glPushMatrix();

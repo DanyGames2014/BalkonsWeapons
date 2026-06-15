@@ -1,6 +1,7 @@
 package net.danygames2014.balkonsweapons.entity.projectile;
 
 import net.danygames2014.balkonsweapons.BalkonsWeapons;
+import net.danygames2014.balkonsweapons.config.Config;
 import net.danygames2014.balkonsweapons.util.PhysHelper;
 import net.danygames2014.nyalib.particle.ParticleHelper;
 import net.danygames2014.nyalib.sound.SoundHelper;
@@ -67,7 +68,7 @@ public class MortarShellEntity extends ProjectileEntity{
             explosiveSize += extraDamage / 4.0f;
         }
         PhysHelper.createAdvancedExplosion(world, this, x, y, z, explosiveSize,
-                true /** BalkonsWeaponMod.instance.modConfig.mortarDoesBlockDamage */, true, isOnFire(), false);
+                Config.BLOCK_DAMAGE_CONFIG.mortarBlockDamage, true, isOnFire(), false);
     }
 
     @Override

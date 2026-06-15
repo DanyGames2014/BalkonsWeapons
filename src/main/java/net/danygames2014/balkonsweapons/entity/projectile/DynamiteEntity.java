@@ -1,6 +1,7 @@
 package net.danygames2014.balkonsweapons.entity.projectile;
 
 import net.danygames2014.balkonsweapons.BalkonsWeapons;
+import net.danygames2014.balkonsweapons.config.Config;
 import net.danygames2014.balkonsweapons.util.PhysHelper;
 import net.danygames2014.nyalib.particle.ParticleHelper;
 import net.danygames2014.nyalib.sound.SoundHelper;
@@ -118,7 +119,7 @@ public class DynamiteEntity extends ProjectileEntity{
         }
         float f = 2.0f;
         PhysHelper.createAdvancedExplosion(world, this, x, y, z, f,
-                true /** BalkonsWeaponMod.instance.modConfig.dynamiteDoesBlockDamage*/, true, false, false);
+                Config.BLOCK_DAMAGE_CONFIG.dynamiteBlockDamage, true, false, false);
     }
 
     @Override

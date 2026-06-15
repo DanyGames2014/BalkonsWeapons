@@ -8,4 +8,7 @@ public class Config {
 
     @ConfigRoot(value = "legacy", visibleName = "Legacy Config")
     public static final LegacyConfig LEGACY_CONFIG = new LegacyConfig();
+
+    @ConfigRoot(value = "block_damage", visibleName = "Block Damage Config")
+    public static final BlockDamageConfig BLOCK_DAMAGE_CONFIG = new BlockDamageConfig();
 }

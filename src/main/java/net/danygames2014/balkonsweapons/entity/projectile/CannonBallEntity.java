@@ -1,6 +1,7 @@
 package net.danygames2014.balkonsweapons.entity.projectile;
 
 import net.danygames2014.balkonsweapons.BalkonsWeapons;
+import net.danygames2014.balkonsweapons.config.Config;
 import net.danygames2014.balkonsweapons.entity.CannonEntity;
 import net.danygames2014.balkonsweapons.util.PhysHelper;
 import net.danygames2014.nyalib.particle.ParticleHelper;
@@ -60,7 +61,7 @@ public class CannonBallEntity extends ProjectileEntity{
         markDead();
         float f = getIsCritical() ? 5.0f : 2.5f;
         PhysHelper.createAdvancedExplosion(world, this, x, y, z, f,
-                true /** BalkonsWeaponMod.instance.modConfig.cannonDoesBlockDamage*/, true, false, false);
+                Config.BLOCK_DAMAGE_CONFIG.cannonBlockDamage, true, false, false);
     }
 
     @Override

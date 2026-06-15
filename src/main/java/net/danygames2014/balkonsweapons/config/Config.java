@@ -11,4 +11,7 @@ public class Config {
 
     @ConfigRoot(value = "block_damage", visibleName = "Block Damage Config")
     public static final BlockDamageConfig BLOCK_DAMAGE_CONFIG = new BlockDamageConfig();
+
+    @ConfigRoot(value = "throw", visibleName = "Throw Config")
+    public static final ThrowConfig THROW_CONFIG = new ThrowConfig();
 }

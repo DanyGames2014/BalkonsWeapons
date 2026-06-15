@@ -2,6 +2,7 @@ package net.danygames2014.balkonsweapons.item;
 
 import net.danygames2014.balkonsweapons.api.UseAction;
 import net.danygames2014.balkonsweapons.api.UseActions;
+import net.danygames2014.balkonsweapons.config.Config;
 import net.danygames2014.balkonsweapons.entity.projectile.KnifeEntity;
 import net.danygames2014.nyalib.sound.SoundHelper;
 import net.minecraft.entity.player.PlayerEntity;
@@ -26,7 +27,7 @@ public class KnifeItem extends MeleeItem{
         if (stack == null) {
             return stack;
         }
-        if (false) { // !BalkonsWeaponMod.instance.modConfig.canThrowKnife
+        if (!Config.THROW_CONFIG.throwKnife) {
             return super.use(stack, world, user);
         }
         if (!world.isRemote) {
@@ -44,6 +45,6 @@ public class KnifeItem extends MeleeItem{
 
     @Override
     public UseAction getUseAction(ItemStack stack, World world, PlayerEntity player) {
-        return true ? UseActions.NONE : super.getUseAction(stack, world, player); // BalkonsWeaponMod.instance.modConfig.canThrowKnife
+        return Config.THROW_CONFIG.throwKnife ? UseActions.NONE : super.getUseAction(stack, world, player); // BalkonsWeaponMod.instance.modConfig.canThrowKnife
     }
 }

@@ -2,6 +2,7 @@ package net.danygames2014.balkonsweapons.item;
 
 import net.danygames2014.balkonsweapons.api.UseAction;
 import net.danygames2014.balkonsweapons.api.UseActions;
+import net.danygames2014.balkonsweapons.config.Config;
 import net.danygames2014.balkonsweapons.entity.projectile.SpearEntity;
 import net.danygames2014.nyalib.sound.SoundHelper;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,7 +22,7 @@ public class SpearItem extends MeleeItem implements CustomReachProvider {
 
     @Override
     public UseAction getUseAction(ItemStack stack, World world, PlayerEntity player) {
-        return UseActions.NONE;
+        return Config.THROW_CONFIG.throwSpear ? UseActions.NONE : super.getUseAction(stack, world, player);
     }
 
     @Override
@@ -29,7 +30,7 @@ public class SpearItem extends MeleeItem implements CustomReachProvider {
         if (stack == null) {
             return stack;
         }
-        if (false) { // !BalkonsWeaponMod.instance.modConfig.canThrowSpear
+        if (!Config.THROW_CONFIG.throwSpear) {
             return super.use(stack, world, user);
         }
         if(!world.isRemote) {

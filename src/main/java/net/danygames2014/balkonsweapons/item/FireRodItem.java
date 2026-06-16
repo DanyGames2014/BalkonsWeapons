@@ -12,11 +12,11 @@ import net.modificationstation.stationapi.api.util.Identifier;
 
 import java.util.Random;
 
-public class FireRodItem extends TemplateItem {
+public class FireRodItem extends MeleeItem {
     private static final Random RANDOM = new Random();
 
     public FireRodItem(Identifier identifier) {
-        super(identifier);
+        super(identifier, MeleeSpecs.FIREROD, null);
         this.setMaxDamage(1);
         this.setMaxCount(1);
     }

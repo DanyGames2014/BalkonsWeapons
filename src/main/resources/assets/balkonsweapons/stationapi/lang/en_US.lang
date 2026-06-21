@@ -16,6 +16,12 @@ item.balkonsweapons.iron_knife.name=Iron Knife
 item.balkonsweapons.golden_knife.name=Golden Knife
 item.balkonsweapons.diamond_knife.name=Diamond Knife
 
+item.balkonsweapons.wooden_katana.name=Wooden Katana
+item.balkonsweapons.stone_katana.name=Stone Katana
+item.balkonsweapons.iron_katana.name=Iron Katana
+item.balkonsweapons.golden_katana.name=Golden Katana
+item.balkonsweapons.diamond_katana.name=Diamond Katana
+
 item.balkonsweapons.dynamite.name=Dynamite
 item.balkonsweapons.javelin.name=Javelin
 item.balkonsweapons.fire_rod.name=Fire Rod

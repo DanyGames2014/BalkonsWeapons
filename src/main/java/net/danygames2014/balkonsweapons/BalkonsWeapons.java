@@ -117,6 +117,12 @@ public class BalkonsWeapons {
         goldenKnife = new KnifeItem(NAMESPACE.id("golden_knife"), ToolMaterial.GOLD);
         diamondKnife = new KnifeItem(NAMESPACE.id("diamond_knife"), ToolMaterial.DIAMOND);
 
+        woodenKatana = new KatanaItem(NAMESPACE.id("wooden_katana"), ToolMaterial.WOOD);
+        stoneKatana = new KatanaItem(NAMESPACE.id("stone_katana"), ToolMaterial.STONE);
+        ironKatana = new KatanaItem(NAMESPACE.id("iron_katana"), ToolMaterial.IRON);
+        goldenKatana = new KatanaItem(NAMESPACE.id("golden_katana"), ToolMaterial.GOLD);
+        diamondKatana = new KatanaItem(NAMESPACE.id("diamond_katana"), ToolMaterial.DIAMOND);
+
         fireRod = new FireRodItem(NAMESPACE.id("fire_rod"));
         dynamite = new DynamiteItem(NAMESPACE.id("dynamite"));
         javelin = new JavelinItem(NAMESPACE.id("javelin"));

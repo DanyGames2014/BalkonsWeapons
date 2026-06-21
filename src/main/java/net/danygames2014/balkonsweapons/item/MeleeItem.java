@@ -7,12 +7,19 @@ import net.danygames2014.balkonsweapons.item.component.WeaponItem;
 import net.danygames2014.balkonsweapons.mixininterface.ItemWithHold;
 import net.danygames2014.balkonsweapons.util.ItemUtil;
 import net.danygames2014.balkonsweapons.util.PhysHelper;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.modificationstation.stationapi.api.block.BlockState;
+import net.modificationstation.stationapi.api.registry.BlockRegistry;
+import net.modificationstation.stationapi.api.tag.TagKey;
 import net.modificationstation.stationapi.api.template.item.TemplateItem;
 import net.modificationstation.stationapi.api.template.item.TemplateSwordItem;
 import net.modificationstation.stationapi.api.util.Identifier;
@@ -23,6 +30,7 @@ public class MeleeItem extends TemplateItem implements WeaponItem, ItemWithHold 
 
     public MeleeSpecs meleeSpecs;
     public ToolMaterial toolMaterial;
+    protected TagKey<Block> mineableTag;
 
     public MeleeItem(Identifier identifier, MeleeSpecs meleeSpecs, ToolMaterial toolMaterial) {
         super(identifier);
@@ -32,6 +40,7 @@ public class MeleeItem extends TemplateItem implements WeaponItem, ItemWithHold 
             setItemProperties();
         }
         setMaxCount(1);
+        mineableTag = TagKey.of(BlockRegistry.KEY, Identifier.of("minecraft:mineable/sword"));
     }
 
     @Override
@@ -64,6 +73,23 @@ public class MeleeItem extends TemplateItem implements WeaponItem, ItemWithHold 
         }
         return true;
     }
+
+    @Override
+    public boolean isSuitableFor(PlayerEntity player, ItemStack itemStack, BlockView blockView, BlockPos blockPos, BlockState state) {
+        return state.isIn(mineableTag);
+    }
+
+    @Override
+    public float getMiningSpeedMultiplier(PlayerEntity player, ItemStack itemStack, BlockView blockView, BlockPos blockPos, BlockState state) {
+        if(meleeSpecs == null) {
+            return 1.0F;
+        }
+        if(isSuitableFor(player, itemStack, blockView, blockPos, state)) {
+            return meleeSpecs.blockDamage * 10.0F;
+        }
+        return 1.0F;
+    }
+
 
     @Override
     public int getAttackDamage(Entity attackedEntity) {

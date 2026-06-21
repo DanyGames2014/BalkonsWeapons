@@ -125,9 +125,9 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEn
                     stack.usingTick(world, self, getItemInUseTime());
                     this.updateItemInUse(stack, itemInUseCount, false);
                 }
+            } else {
+                clearItemInUse();
             }
-        } else {
-            clearItemInUse();
         }
     }
 }

@@ -21,6 +21,9 @@ public class DynamiteEntity extends ProjectileEntity{
 
     public DynamiteEntity(World world) {
         super(world);
+        setPickupStatus(PickupStatus.DISALLOWED);
+        extinguished = false;
+        explodefuse = random.nextInt(30) + 20;
     }
 
     public DynamiteEntity(World world, double x, double y, double z) {
@@ -64,6 +67,7 @@ public class DynamiteEntity extends ProjectileEntity{
         if (isSubmergedInWater() && !extinguished) {
             extinguished = true;
             SoundHelper.playSound(world, x, y, z, "random.fizz", 1.0F, 1.2F / (random.nextFloat() * 0.2F + 0.9F));
+            setPickupStatus(PickupStatus.ALLOWED);
             for (int k = 0; k < 8; ++k) {
                 float f6 = 0.25f;
                 ParticleHelper.addParticle(world, "explode", x - velocityX * f6,
